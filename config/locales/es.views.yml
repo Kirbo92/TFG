@@ -2,3 +2,6 @@ es:
   posts:
     index:
       title: 'Mensajes'
+      new_link: 'Nuevo post'
+      edit_link: 'Editar post'
+      delete_link: 'Eliminar post'
