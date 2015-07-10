@@ -5,8 +5,8 @@ class PostsController < ApplicationController
 	end
 
 	def show
-    @post = Post.find(params[:id])
-  end
+		@post = Post.find(params[:id])
+	end
 
 	def new
 		@post = Post.new
@@ -38,11 +38,11 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-    	@post = Post.find(params[:id])
-    	@post.destroy
- 
-    	redirect_to posts_path
-  end
+		@post = Post.find(params[:id])
+		@post.destroy
+		
+		redirect_to posts_path
+	end
 
 	private
 	def secure_params

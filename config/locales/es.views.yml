@@ -5,3 +5,5 @@ es:
       new_link: 'Nuevo post'
       edit_link: 'Editar post'
       delete_link: 'Eliminar post'
+    new:
+      title: 'Nuevo %{modelo}'
