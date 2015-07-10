@@ -1,5 +1,9 @@
 es:
   posts:
+    post:
+      new_link: 'Nuevo mensaje'
+      edit_link: 'Editar'
+      delete_link: 'Eliminar'
     index:
       title: 'Mensajes'
       new_link: 'Nuevo mensaje'
@@ -7,3 +11,14 @@ es:
       delete_link: 'Eliminar'
     new:
       title: 'Nuevo %{model}'
+      form:
+        error: 'Ha ocurrido un error al crear el %{model}'
+    edit:
+      form:
+        error: 'Ha ocurrido un error al editar el %{model}'
+    create:
+      created: 'Se ha agregado un nuevo %{model}'
+    destroy:
+      destroyed: 'Se ha eliminado correctamente'
+    update:
+      edited: '%{model} editado'

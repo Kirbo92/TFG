@@ -1,4 +1,10 @@
-<%= form_for @post do |post| %>
-	<%= post.text_area :content %></br>
+<%= form_for @post, builder: CustomFormBuilder do |post| %>
+
+	<%= post.form_error %>
+
+	<%= post.text_area :content %>
+	<%= post.field_error :content %>
+	</br>
+
 	<%= post.submit %>
 <% end %>
