@@ -5,8 +5,8 @@ class PostsController < ApplicationController
 	end
 
 	def show
-    	@post = Post.find(params[:id])
-  	end
+    @post = Post.find(params[:id])
+  end
 
 	def new
 		@post = Post.new
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 
 		if @post.update secure_params
-			return redirect_to post_path
+			return redirect_to posts_path
 		end
 
 		render 'edit'
