@@ -1,0 +1,9 @@
+es:
+  posts:
+    index:
+      title: 'Mensajes'
+      new_link: 'Nuevo mensaje'
+      edit_link: 'Editar'
+      delete_link: 'Eliminar'
+    new:
+      title: 'Nuevo %{model}'
