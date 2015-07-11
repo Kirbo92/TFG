@@ -8,11 +8,25 @@
 </head>
 <body>
 
+	<% if user_signed_in? %>
+		<div class="user">
+			<p><%= %></p>
+			<%= link_to 'Cerrar sesion', destroy_user_session_path, method: :delete %> |
+			<%= link_to current_user.username, edit_user_registration_path %>
+		</div>
+	<%else%>
+		<div class="user">
+			<%= link_to 'Iniciar sesión', new_user_session_path %> |
+			<%= link_to 'Crear cuenta', new_user_registration_path %>
+		</div>
+
+	<% end %>
 	<div id="flash">
 		<% flash.each do |key, value|%>
 			<div id="flash-<%= key %>"><%= value%></div>
 		<%end%>	
 	</div>
+	
 	<%= yield %>
 
 </body>

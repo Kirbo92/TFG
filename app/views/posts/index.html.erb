@@ -1,6 +1,8 @@
 <h1><%= t('.title') %></h1>
 
-<%=link_to t('.new_link'), new_post_path %>
+<% if user_signed_in? %>
+	<%=link_to t('.new_link'), new_post_path %>
+<%end%>
 
 <section>
 	<%= render @posts %>

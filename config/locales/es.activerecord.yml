@@ -2,6 +2,14 @@ es:
   activerecord:
     models:
       post: 'mensaje'
+      user: 'Usuario'
     attributes:
       post:
         content: 'Contenido'
+      user:
+        username: 'Usuario'
+        email: 'Correo electronico'
+        password: 'Contraseña'
+        password_confirmation: 'Confirmar contraseña'
+        remember_me: 'Recordarme'
+        current_password: 'Contraseña actual'
