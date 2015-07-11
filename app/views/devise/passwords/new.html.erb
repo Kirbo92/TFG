@@ -1,15 +1,15 @@
 <h2><%= t('.title') %></h2>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { class: 'pure-form pure-form-aligned', method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
+  <div class="pure-control-group">
+    <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
   </div>
 
-  <div class="actions">
-    <%= f.submit t('.send_me_reset_password_instructions') %>
+  <div class="pure-control">
+    <%= f.submit t('.send_me_reset_password_instructions'), class: 'pure-button pure-button-primary'%>
   </div>
 <% end %>
 

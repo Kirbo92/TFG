@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+	before_action :authenticate_user!, except: [:index]
+
 	def index
 		@posts = Post.all
 	end
@@ -14,6 +16,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.new secure_params
+		@post.user = current_user
 		
 		if @post.save
 			return redirect_to posts_path, notice: t('.created', model: @post.class.model_name.human)
