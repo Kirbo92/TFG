@@ -3,7 +3,7 @@
 <%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { class: 'pure-form pure-form-aligned', method: :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="pure-control">
+  <div class="pure-control-group">
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true %>
   </div>

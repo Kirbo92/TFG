@@ -34,7 +34,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 
 		if @post.update secure_params
-			return redirect_to posts_path, notice: t('.edited', model: @post.class.model_name.human)
+			return redirect_to root_path, notice: t('.edited', model: @post.class.model_name.human)
 		end
 
 		render 'edit'
@@ -44,7 +44,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 		@post.destroy
 		
-		redirect_to posts_path, notice: t('.destroyed', model: @post.class.model_name.human)
+		redirect_to root_path, notice: t('.destroyed', model: @post.class.model_name.human)
 	end
 
 	private

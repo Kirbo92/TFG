@@ -8,6 +8,7 @@ es:
         content: 'Contenido'
       user:
         username: 'Usuario'
+        name: 'Nombre'
         email: 'Correo electronico'
         password: 'Contraseña'
         password_confirmation: 'Confirmar contraseña'
