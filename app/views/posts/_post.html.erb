@@ -1,6 +1,6 @@
 <div class="content">
 	<p>
-		<%= post.user.username %> <br/>
+		<%= current_user.try(:username) %>
 		<%= post.content %>
 		<% if user_signed_in? %>
 		<%=link_to t('.edit_link'), edit_post_path(post)%> 
