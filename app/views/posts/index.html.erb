@@ -1,9 +1,18 @@
 <h1><%= t('.title') %></h1>
 
-<% if user_signed_in? %>
-	<%=link_to t('.new_link'), new_post_path %>
-<%end%>
+
 
 <section>
-	<%= render @posts %>
+	<% if user_signed_in? %>
+	<%= link_to t('.new_link'), new_post_path %>
+
+	<!-- Listamos los posts -->
+	<table class="pure-table">
+		<tbody>
+			<%= render @posts %>
+		</tbody>      
+	</table>
+
+	<%end%>
+
 </section>

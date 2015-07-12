@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-	before_action :authenticate_user!, except: [:index]
+	before_action :authenticate_user!
 
 	def index
 		@posts = Post.all
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
 		@post.user = current_user
 		
 		if @post.save
-			return redirect_to posts_path, notice: t('.created', model: @post.class.model_name.human)
+			return redirect_to root_path, notice: t('.created', model: @post.class.model_name.human)
 		end
 
 		render :new

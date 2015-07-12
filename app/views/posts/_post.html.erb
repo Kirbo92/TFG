@@ -1,10 +1,13 @@
 <div class="content">
-	<p>
-		<%= current_user.try(:username) %>
-		<%= post.content %>
+	<tr>
+		<td>
+			<%= current_user.name %><br/>
+			<%= current_user.username %>
+		</td> 
+		<td><%= post.content %>
 		<% if user_signed_in? %>
-		<%=link_to t('.edit_link'), edit_post_path(post)%> 
-		<%=link_to t('.delete_link'), post_path(post), method: :delete %>
+		<%=link_to t('.edit_link'), edit_post_path(post)%>
+		<%=link_to t('.delete_link'), post_path(post), method: :delete %></td>
 		<%end%>
-	</p> 
+	</tr> 
 </div> 
