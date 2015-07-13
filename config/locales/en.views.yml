@@ -1,0 +1,24 @@
+es:
+  posts:
+    post:
+      new_link: 'New post'
+      edit_link: 'Edit'
+      delete_link: 'Delete'
+    index:
+      title: 'Posts'
+      new_link: 'New post'
+      edit_link: 'Edit'
+      delete_link: 'Delete'
+    new:
+      title: 'New %{model}'
+      form:
+        error: 'Ha ocurrido un error al crear el %{model}'
+    edit:
+      form:
+        error: 'Ha ocurrido un error al editar el %{model}'
+    create:
+      created: 'Se ha agregado un nuevo %{model}'
+    destroy:
+      destroyed: 'Se ha eliminado correctamente'
+    update:
+      edited: '%{model} edited'
