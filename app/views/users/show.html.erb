@@ -1,0 +1,5 @@
+<h2>Perfil de <%= @user.name %> </h2>
+
+<% if current_user.name != @user.name %>
+	<%= link_to 'Seguir'%>
+<%end%>
