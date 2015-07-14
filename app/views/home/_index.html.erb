@@ -1,7 +1,7 @@
 <% if user_signed_in? %>
 
 	<div class="user">
-		<p><%= %></p>
+		<%= link_to 'Inicio', root_path %> |
 		<%= link_to 'Cerrar sesion', destroy_user_session_path, method: :delete %> |
 		<%= link_to current_user.username, edit_user_registration_path %>
 	</div>
@@ -14,4 +14,3 @@
 	</div>
 
 <% end %>
-
