@@ -1,5 +1,5 @@
 <% model_name = @post.class.model_name.human %>
-<h1><%= t('.title', model: model_name) %></h1>
+<h2><%= t('.title', model: model_name) %></h2>
 
 <%= form_for @post, html: { class: 'pure-form pure-form-aligned' }, builder: CustomFormBuilder do |post| %>
 

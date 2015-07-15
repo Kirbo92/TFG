@@ -3,6 +3,8 @@ class PostsController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
+		# @posts = Followers.joins('LEFT JOIN posts ON posts.user_id = followers.user_followed_id', 
+		# 	followers.user_id = current_user.id)
 		@posts = Post.order(created_at: :desc)
 	end
 

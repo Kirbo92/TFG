@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  root to: 'posts#index'
+  devise_for :users , :path => '', :path_names => { :sign_in => 'login', :sign_up => 'register' }
+
   resources :posts
+  resources :followers, only: [:create, :destroy]
   resources :users, only: [:show]
 
-  root to: 'posts#index'
+  
 
 end

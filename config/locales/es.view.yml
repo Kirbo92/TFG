@@ -22,3 +22,6 @@ es:
       destroyed: 'Se ha eliminado correctamente'
     update:
       edited: '%{model} editado'
+  followers:
+    create:
+      created: 'Ahora sigues a %{user}'

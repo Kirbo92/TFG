@@ -1,14 +1,10 @@
-<h1><%= t('.title') %></h1>
+<h2><%= t('.title') %></h2>
 
+<% if user_signed_in? %>
+<%= link_to t('.new_link'), new_post_path %>
 
-
+<!-- Listamos los posts -->
 <section>
-	<% if user_signed_in? %>
-	<%= link_to t('.new_link'), new_post_path %>
-
-	<!-- Listamos los posts -->
 	<%= render @posts %>
-
-	<%end%>
-
 </section>
+<%end%>
