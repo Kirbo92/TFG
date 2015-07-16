@@ -1,0 +1,48 @@
+a{
+	color: #0060A9;
+}
+
+body{
+	background: #F1F1F1;
+	font-family: Helvetica, Arial;
+	font-size: 16px;
+}
+
+footer{
+	background: white;
+}
+
+h2{
+	color: #049FE1
+}
+
+header{
+	background: white;
+	color: #0061AD;
+	padding: 0.5em;
+}
+
+header .user{
+}
+
+.post{
+	background: white;
+	padding: 0.5em;
+}
+
+.post .post-user{
+	border-right: 1px solid #049FE1;
+	display: inline-block;
+	padding-right: 1em;
+}
+
+.post .post-content{
+	display: inline-block;
+	padding: 1em;
+}
+
+
+
+
+
+

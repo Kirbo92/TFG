@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<%= render '/home/index' %>
+	<%= render '/home/header' %>
 
 	<div id="flash">
 		<% flash.each do |key, value|%>
@@ -17,6 +17,8 @@
 	</div>
 	
 	<%= yield %>
+
+	<%= render '/home/footer' %>
 
 </body>
 </html>

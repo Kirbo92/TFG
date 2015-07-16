@@ -1,7 +1,9 @@
 <h2>Perfil de <%= @user.name %> </h2>
 
 <% @user.posts.each do |m|%>
-	<%=m.content%>
+	<div class="post-content">
+		<%=m.content%>
+	</div>
 <%end%>
 
 <% if @user.id != current_user.id %>
