@@ -1,0 +1,17 @@
+<nav>
+	<ul>
+		<li>
+			<%= link_to 'Inicio', root_path %>
+		</li>
+		<li>
+			<%= link_to 'Mi Perfil', edit_user_registration_path %>
+		</li>
+		<li>
+			<%= link_to 'Grupos', root_path %>
+		</li>
+		<li id='new-post'>
+			<%= link_to 'Nuevo mensaje', new_post_path, method: :get %>
+		</li>
+
+	</ul>
+</nav>

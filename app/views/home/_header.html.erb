@@ -1,5 +1,16 @@
 <header>
-	<%=link_to image_tag('http://www10.ujaen.es/sites/all/themes/ujaen/img/escudouja.png'), root_path %>
+	<figure id='logo'>
+		<%= image_tag('http://www10.ujaen.es/sites/default/files/users/cepuja/Escudo_Bit_UJAxp.gif') %>
+	</figure>
 
-	<%= render 'home/index'%>
+	<h1>Sistema Microblogging</h1>
+
+	<% if user_signed_in? %>
+	<%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %>
+	<figure id='avatar'>
+		<%= image_tag("http://farm3.static.flickr.com/2278/2239310885_7ee80a8a98_t.jpg") %>
+	</figure>
+	
+	<% end %>
+
 </header>

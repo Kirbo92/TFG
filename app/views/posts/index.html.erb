@@ -2,9 +2,7 @@
 <% if user_signed_in? %>
 <section>
 	<h2><%= t('.title') %></h2>
-
-	<%= button_to t('.new_link'), new_post_path, method: :get, class: 'pure-button pure-button-primary' %>
-
+	
 	<!-- Listamos los posts -->
 	<%= render @posts %>
 </section>
