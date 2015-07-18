@@ -1,7 +1,7 @@
 
 <% if user_signed_in? %>
 <section>
-	<h2><%= t('.title') %></h2>
+	<h2><% t('.title') %></h2>
 	
 	<!-- Listamos los posts -->
 	<%= render @posts %>

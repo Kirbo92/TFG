@@ -1,3 +1,18 @@
-<p>
-	<%= @post.content %>
-</p>
+<div class="post">
+	<div class="post-user">
+		<% image_tag("http://farm3.static.flickr.com/2278/2239310885_7ee80a8a98_t.jpg") %>
+		<span> <%= @post.user.name %> </span><br/>
+		<span> <%= link_to '@' + @post.user.username, "users/#{@post.user.id}" %></span>
+	</div>
+
+	<div class="post-content">
+		<p><%= @post.content %></p>
+		<% if @post.user.username == current_user.username %>
+			<%=link_to t('.edit_link'), edit_post_path(@post)%>
+			<%=link_to t('.delete_link'), post_path(@post), method: :delete %>
+		<% end %>
+	</div>
+</div>
+
+
+

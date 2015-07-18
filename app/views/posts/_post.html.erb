@@ -1,7 +1,8 @@
 <div class="post">
 	<div class="post-user">
-		<%= post.user.name %><br/>
-		<%= link_to '@' + post.user.username, "users/#{post.user.id}" %>
+		<% image_tag("http://farm3.static.flickr.com/2278/2239310885_7ee80a8a98_t.jpg") %>
+		<span> <%= post.user.name %> </span><br/>
+		<span> <%= link_to '@' + post.user.username, "users/#{post.user.id}" %></span>
 	</div>
 
 	<div class="post-content">
@@ -11,5 +12,4 @@
 			<%=link_to t('.delete_link'), post_path(post), method: :delete %>
 		<% end %>
 	</div>
-	
 </div> 

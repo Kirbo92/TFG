@@ -4,98 +4,14 @@ a{
 }
 
 body{
-	background: #F1F1F1;
+	background: #B6CAD4;
 	font-family: Helvetica, Arial;
 	font-size: 16px;
 }
 
 h2{
-	color: #049FE1
-}
-
-footer{
-	background: white;
-	color: #787878;
-}
-
-header{
-	background: white;
-	overflow: hidden;
-	position: relative;
-}
-
-header a{
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin: 1em 5em;
-}
-
-header figure{
-	float: left;
-	margin: 0;
-}
-
-header h1{
-	color: #094F99;
-	margin: 0.5em 190px 0.3em 0;
-}
-
-header #logo img{
-	width: 60px;
-	margin: 1em 1em;
-}
-
-header #avatar{
-	position: absolute;
-	top: 0;
-	right: 0;
-}
-
-header #avatar img{
-	width: 60px;
-	margin: 1em 1em;
-}
-
-nav{
-	background: #ACB8C1;
-	padding: 0 1em;
-	position: relative;
-}
-
-nav ul{
-	font-weight: bold;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-nav ul li{
-	display: inline-block;
-	margin: 0 1em 0 0;
-	text-transform: uppercase;
-}
-
-nav ul li a{
-	display: block;
-	padding: 0.5em 0;
-}
-
-p{
-	margin: 0;
-}
-
-#new-post{
-	padding: 0; 
-	position: absolute;
-	top: -0.4em;
-	right: 0;
-}
-
-#new-post a{
-	background: #0B60E1;
-	padding: 0.8em;
-	color: white;
+	color: #049FE1;
+	margin: 0.5em 0.7em;
 }
 
 #flash{
@@ -103,12 +19,19 @@ p{
 }
 
 .post{
-	background: white;
-	margin: 0.2em 0.5em;
+	border-radius: 10px;
+	margin: 0.5em 1em;
+	overflow: hidden;
+	background: #F1F1F1;
+
+	.post-user{
+		margin: 1em;
+		float: left;
+	}
+
+	.post-content{
+		border-left: 1px solid #049FE1;
+		margin: 0 2em 1em 8em;
+		padding: 0em 1em 0.1em;
+	}
 }
-
-.post-content{
-}
-
-
-
