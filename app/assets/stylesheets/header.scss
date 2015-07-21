@@ -1,40 +1,35 @@
 header{
-	background: white;
 	overflow: hidden;
 	position: relative;
 
 	a {
-		position: absolute;
-		top: 0;
-		right: 0;
 		margin: 1em 5em;
-	}
-
-	figure{ 
-		float: left;
+		position: absolute;
+		right: 0;
+		top: 0;
 	}
 
 	h1{
-		color: #094F99;
 		margin: 0.5em 190px 0.3em 0;
 	}
+}
 
-	#logo{
-		margin: 1em 1em;
 
-		img{
-			width: 60px;
-		}
+#logo{
+	margin: 1em 1em;
+	
+	img{
+		width: 60px;
 	}
+}
 
-	#avatar{
-		position: absolute;
-		top: 0;
-		right: 0;
-		margin: 1em 1em;
+#avatar{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 1em 1em;
 
-		img{
-			width: 60px;
-		}
+	img{
+		width: 60px;
 	}
 }

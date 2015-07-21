@@ -5,8 +5,12 @@ a{
 
 body{
 	background: #B6CAD4;
-	font-family: Helvetica, Arial;
+	font-family: Arial, Helvetica;
 	font-size: 16px;
+}
+
+h1{
+	color: #094F99;
 }
 
 h2{
@@ -18,18 +22,33 @@ h2{
 	margin: 1em;
 }
 
+.bg-gris{
+	background: #F1F1F1;
+}
+
+.btn-rojo:hover
+{
+	background: #900;
+}
+
+.center{
+	text-align: center;
+}
+
+.left{
+	float: left;
+}
+
 .post{
 	border-radius: 10px;
 	margin: 0.5em 1em;
 	overflow: hidden;
-	background: #F1F1F1;
 
-	.post-user{
+	.post__user{
 		margin: 1em;
-		float: left;
 	}
 
-	.post-content{
+	.post__content{
 		border-left: 1px solid #049FE1;
 		margin: 0 2em 1em 8em;
 		padding: 0em 1em 0.1em;

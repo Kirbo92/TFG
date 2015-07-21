@@ -1,25 +1,29 @@
-nav{
-	background: #ACB8C1;
-	padding: 0 1em;
-	position: relative;
-}
-
-nav ul{
-	font-weight: bold;
-	list-style: none;
+ul{
 	margin: 0;
 	padding: 0;
 }
 
-nav ul li{
-	display: inline-block;
-	margin: 0 1em 0 0;
-	text-transform: uppercase;
-}
+nav{
+	background: #ACB8C1;
+	padding: 0 1em;
+	position: relative;
 
-nav ul li a{
-	display: block;
-	padding: 0.5em 0;
+	ul{
+		font-weight: bold;
+		list-style: none;
+
+		li{
+			display: inline-block;
+			margin: 0 1em 0 0;
+			text-transform: uppercase;
+
+			a{
+				display: block;
+				padding: 0.5em 0;
+			}
+		}
+		
+	}
 }
 
 #new-post{
@@ -27,10 +31,11 @@ nav ul li a{
 	position: absolute;
 	top: -0.4em;
 	right: 0;
-}
+	box-shadow: rgba(0,0,0, 0.5) 4px 4px 5px;
 
-#new-post a{
-	background: #0B60E1;
-	padding: 0.8em;
-	color: white;
+	a{
+		background: #0B60E1;
+		padding: 0.8em;
+		color: white;
+	}
 }

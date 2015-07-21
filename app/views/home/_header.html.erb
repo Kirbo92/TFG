@@ -1,5 +1,5 @@
-<header>
-	<figure id='logo'>
+<header class='bg-gris'>
+	<figure id='logo' class='left'>
 		<%= image_tag('http://www10.ujaen.es/sites/default/files/users/cepuja/Escudo_Bit_UJAxp.gif') %>
 	</figure>
 
@@ -7,7 +7,7 @@
 
 	<% if user_signed_in? %>
 	<%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %>
-	<figure id='avatar'>
+	<figure id='avatar' class='left'>
 		<%= image_tag("http://farm3.static.flickr.com/2278/2239310885_7ee80a8a98_t.jpg") %>
 	</figure>
 	
