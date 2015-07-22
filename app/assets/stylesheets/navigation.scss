@@ -3,39 +3,46 @@ ul{
 	padding: 0;
 }
 
-nav{
+.navigation{
 	background: #ACB8C1;
-	padding: 0 1em;
+	padding: 0 .5em;
 	position: relative;
+}
 
-	ul{
+	.navigation__list{
 		font-weight: bold;
-		list-style: none;
+		list-style: none;	
+	}
 
-		li{
+		.navigation__list__item{
 			display: inline-block;
 			margin: 0 1em 0 0;
-			text-transform: uppercase;
-
-			a{
+		}
+			.navigation__list__item a{
 				display: block;
 				padding: 0.5em 0;
 			}
-		}
-		
-	}
-}
 
-#new-post{
+
+.new-post{
 	padding: 0; 
 	position: absolute;
 	top: -0.4em;
 	right: 0;
 	box-shadow: rgba(0,0,0, 0.5) 4px 4px 5px;
+}
+@media screen and (max-width: 400px){
+	.new-post{
+		display: none;
+	}
+}
 
-	a{
+	.new-post a{
 		background: #0B60E1;
 		padding: 0.8em;
 		color: white;
 	}
+
+.uppercase{
+	text-transform: uppercase;
 }

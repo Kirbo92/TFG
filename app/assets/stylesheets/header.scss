@@ -1,35 +1,46 @@
 header{
 	overflow: hidden;
 	position: relative;
+}
 
-	a {
-		margin: 1em 5em;
+	.header__title{
+		margin: 1em 80px .5em 80px;
+	}
+	@media screen and (max-width: 400px){
+		.header__title{
+			font-size: 1.5em;
+			margin: 1em;
+		}
+	}
+
+	.header__logo{
+		margin: 1em;
+	}
+
+		.header__logo__image{
+			width: 5rem;
+		}
+
+	.header__avatar{
+		margin: 1.5em;
 		position: absolute;
 		right: 0;
 		top: 0;
 	}
-
-	h1{
-		margin: 0.5em 190px 0.3em 0;
+	@media screen and (max-width: 400px){
+		.header__avatar{
+			display: none;
+		}
 	}
-}
-
-
-#logo{
-	margin: 1em 1em;
 	
-	img{
-		width: 60px;
-	}
-}
+		.header__avatar__image{
+			border-radius: 50%;
+			width: 4rem;
+		}
 
-#avatar{
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin: 1em 1em;
 
-	img{
-		width: 60px;
-	}
-}
+
+
+
+
+

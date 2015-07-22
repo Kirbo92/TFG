@@ -1,16 +1,14 @@
-<header class='bg-gris'>
-	<figure id='logo' class='left'>
-		<%= image_tag('http://www10.ujaen.es/sites/default/files/users/cepuja/Escudo_Bit_UJAxp.gif') %>
+<header class='header bg-gris'>
+	<figure class='header__logo left'>
+		<%= image_tag('logo.gif', class: 'header__logo__image') %>
 	</figure>
 
-	<h1>Sistema Microblogging</h1>
+	<h1 class='header__title'>Sistema Microblogging</h1>
 
 	<% if user_signed_in? %>
 	<%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %>
-	<figure id='avatar' class='left'>
-		<%= image_tag("http://farm3.static.flickr.com/2278/2239310885_7ee80a8a98_t.jpg") %>
+	<figure  class='header__avatar left'>
+		<%= image_tag('avatar.jpg', class: 'header__avatar__image') %>
 	</figure>
-	
 	<% end %>
-
 </header>

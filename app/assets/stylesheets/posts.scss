@@ -5,8 +5,6 @@ a{
 
 body{
 	background: #B6CAD4;
-	font-family: Arial, Helvetica;
-	font-size: 16px;
 }
 
 h1{
@@ -15,7 +13,16 @@ h1{
 
 h2{
 	color: #049FE1;
-	margin: 0.5em 0.7em;
+}
+
+html{
+	font-family: Arial, Helvetica;
+	font-size: 16px;
+}
+@media screen and (max-width: 400px){
+	html{
+		font-size: 80%;
+	}
 }
 
 #flash{
@@ -26,11 +33,6 @@ h2{
 	background: #F1F1F1;
 }
 
-.btn-rojo:hover
-{
-	background: #900;
-}
-
 .center{
 	text-align: center;
 }
@@ -39,18 +41,43 @@ h2{
 	float: left;
 }
 
+.right{
+	float: right;
+}
+
 .post{
 	border-radius: 10px;
 	margin: 0.5em 1em;
 	overflow: hidden;
+	position: relative;
+}
 
 	.post__user{
-		margin: 1em;
+		margin:  .5em 1em;
+		padding: 0 .5em 0 0;
+		border-right: 1px solid #049FE1;
+		text-align: center;
 	}
 
+		.post__user__avatar{
+			border-radius: 50%;
+			width: 55px;
+			padding: .5em 0 .5em .5em;
+			
+		}
+
 	.post__content{
-		border-left: 1px solid #049FE1;
-		margin: 0 2em 1em 8em;
+		margin: .5em 2em 1em 8em;
 		padding: 0em 1em 0.1em;
 	}
-}
+
+		.post__content__actions{
+			bottom: 0;
+			margin: 1em .5em 1em 0;
+			position: absolute;
+		}
+
+		.post__content__actions a{
+			padding: 0 1em 0 0;
+		}
+

@@ -1,15 +1,18 @@
 <div class="post bg-gris">
 	<div class="post__user left">
-		<% image_tag("http://farm3.static.flickr.com/2278/2239310885_7ee80a8a98_t.jpg") %>
+		<%= image_tag('avatar.jpg', class: 'post__user__avatar') %> <br/>
 		<span> <%= post.user.name %> </span><br/>
 		<span> <%= link_to '@' + post.user.username, "users/#{post.user.id}" %></span>
 	</div>
 
 	<div class="post__content">
 		<p><%= post.content %></p>
-		<% if post.user.username == current_user.username %>
-			<%=link_to t('.edit_link'), edit_post_path(post)%>
-			<%=link_to t('.delete_link'), post_path(post), method: :delete %>
-		<% end %>
+		<div class="post__content__actions">
+			<% if post.user.username == current_user.username %>
+				<%=link_to t('.edit_link'), edit_post_path(post)%>
+				<%=link_to t('.delete_link'), post_path(post), method: :delete %>
+			<% end %>
+		</div>
+		
 	</div>
 </div> 

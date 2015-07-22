@@ -1,15 +1,15 @@
-<nav>
-	<ul>
-		<li>
+<nav class='navigation'>
+	<ul class='navigation__list'>
+		<li class='navigation__list__item uppercase'>
 			<%= link_to 'Inicio', root_path %>
 		</li>
-		<li>
+		<li class='navigation__list__item uppercase'>
 			<%= link_to 'Mi Perfil', edit_user_registration_path %>
 		</li>
-		<li>
+		<li class='navigation__list__item uppercase'>
 			<%= link_to 'Grupos', root_path %>
 		</li>
-		<li id='new-post'>
+		<li class='navigation__list__item new-post uppercase'>
 			<%= link_to 'Nuevo mensaje', new_post_path, method: :get %>
 		</li>
 
