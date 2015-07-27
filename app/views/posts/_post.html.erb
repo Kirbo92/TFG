@@ -1,13 +1,14 @@
-<div class="post bg-gris">
-	<div class="post__user left">
-		<%= image_tag('avatar.jpg', class: 'post__user__avatar') %> <br/>
+<div class='u-wrapper bg-white'>
+<div class='posts bg--gray'>
+	<div class="posts__user u-left">
+		<%= image_tag('avatar.jpg', class: " posts__user__avatar posts__user__avatar--#{post.user.level} ") %> <br/>
 		<span> <%= post.user.name %> </span><br/>
 		<span> <%= link_to '@' + post.user.username, "users/#{post.user.id}" %></span>
 	</div>
 
-	<div class="post__content">
+	<div class="posts__content">
 		<p><%= post.content %></p>
-		<div class="post__content__actions">
+		<div class='post__content__actions'>
 			<% if post.user.username == current_user.username %>
 				<%=link_to t('.edit_link'), edit_post_path(post)%>
 				<%=link_to t('.delete_link'), post_path(post), method: :delete %>
@@ -16,3 +17,4 @@
 		
 	</div>
 </div> 
+</div>

@@ -1,83 +1,53 @@
-a{
-	color: #0060A9;
-	text-decoration: none;
-}
-
-body{
-	background: #B6CAD4;
-}
-
-h1{
-	color: #094F99;
-}
-
-h2{
-	color: #049FE1;
-}
-
-html{
-	font-family: Arial, Helvetica;
-	font-size: 16px;
-}
-@media screen and (max-width: 400px){
-	html{
-		font-size: 80%;
-	}
-}
-
-#flash{
-	margin: 1em;
-}
-
-.bg-gris{
-	background: #F1F1F1;
-}
-
-.center{
-	text-align: center;
-}
-
-.left{
-	float: left;
-}
-
-.right{
-	float: right;
-}
-
-.post{
+.posts{
 	border-radius: 10px;
-	margin: 0.5em 1em;
+	margin: .5em 0;
 	overflow: hidden;
 	position: relative;
 }
-
-	.post__user{
-		margin:  .5em 1em;
-		padding: 0 .5em 0 0;
+	.posts__user{
 		border-right: 1px solid #049FE1;
+		margin: .5em 0;
 		text-align: center;
+		width: 6.5em;
 	}
 
-		.post__user__avatar{
+		.posts__user__avatar{
 			border-radius: 50%;
-			width: 55px;
-			padding: .5em 0 .5em .5em;
-			
+			border: 1px solid #049FE1;
+			width: 60px;
 		}
+			.posts__user__avatar--0{
+				border: 1px solid red;
+			}
+			.posts__useravatar--1{
+				border: 1px solid yellow;
+			}
 
-	.post__content{
-		margin: .5em 2em 1em 8em;
-		padding: 0em 1em 0.1em;
-	}
+	.posts__content{
+		margin: 0em 0em 0em 6.5em;
+		padding: .5em 1em 2em;
 
 		.post__content__actions{
-			bottom: 0;
-			margin: 1em .5em 1em 0;
 			position: absolute;
+			bottom: 0;
+			margin: .5em 0;
+			a{
+				margin: 0 1em 0 0;
+			}
 		}
+	}
 
-		.post__content__actions a{
-			padding: 0 1em 0 0;
-		}
+.post{
+	padding: 1em;
 
+	textarea{
+		margin: 1em auto;
+		padding: 10px;
+		resize: none;
+	}
+}
+@media screen and (min-width: 768px){
+	.post{
+		max-width: 500px;
+	}
+}

@@ -3,9 +3,16 @@ class PostsController < ApplicationController
 	before_action :authenticate_user!
 
 	def index
-		# @posts = Followers.joins('LEFT JOIN posts ON posts.user_id = followers.user_followed_id', 
-		# 	followers.user_id = current_user.id)
-		@posts = Post.order(created_at: :desc)
+		@posts = Post.find_by_sql("SELECT p.id, p.content, p.created_at, p.updated_at, p.user_id
+									FROM posts AS p
+									RIGHT JOIN followers AS f
+ 									ON p.user_id = f.user_followed_id
+									WHERE f.user_id = '#{current_user.id}'
+									UNION
+									SELECT p.id, p.content, p.created_at, p.updated_at, p.user_id
+									FROM posts as p
+									WHERE p.user_id = '#{current_user.id}'
+									ORDER BY created_at DESC")
 	end
 
 	def show

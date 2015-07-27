@@ -1,0 +1,32 @@
+a{
+	color: #0060A9;
+}
+
+body{
+	background: #B6CAD4;
+}
+
+h1{
+	color: #094F99;
+	margin: 0;
+}
+
+h2{
+	color: #049FE1;
+	margin: 0;
+}
+
+body{
+	font-family: Arial, Helvetica;
+	font-size: 14px;
+}
+@media screen and (min-width: 640px){
+	body{
+		font-size: 16px;
+	}
+}
+@media screen and (min-width: 1000px){
+	body{
+		font-size: 18px;
+	}
+}

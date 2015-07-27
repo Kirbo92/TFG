@@ -1,5 +1,5 @@
-<header class='header bg-gris'>
-	<figure class='header__logo left'>
+<header class='header bg--gray'>
+	<figure class='header__logo u-left'>
 		<%= image_tag('logo.gif', class: 'header__logo__image') %>
 	</figure>
 
@@ -7,7 +7,7 @@
 
 	<% if user_signed_in? %>
 	<%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete %>
-	<figure  class='header__avatar left'>
+	<figure  class='header__avatar u-left'>
 		<%= image_tag('avatar.jpg', class: 'header__avatar__image') %>
 	</figure>
 	<% end %>

@@ -1,10 +1,13 @@
 <%= form_for @post, builder: CustomFormBuilder do |post| %>
 
-	<%= post.form_error %>
+	<div class='bg--gray u-wrapper'>
+		<section class='post'>
+			<%= post.form_error %>
 
-	<%= post.text_area :content %>
-	<%= post.field_error :content %>
-	</br>
+			<%= post.text_area :content, class: 'form-control' %>
+			<%= post.field_error :content %>
+			<%= post.submit class: 'btn btn-primary'%>
+		</section>
+	</div>
 
-	<%= post.submit class: 'pure-button pure-button-primary'%>
 <% end %>

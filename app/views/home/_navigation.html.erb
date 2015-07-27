@@ -1,17 +1,16 @@
 <nav class='navigation'>
 	<ul class='navigation__list'>
-		<li class='navigation__list__item uppercase'>
+		<li class='navigation__list__item u-uppercase'>
 			<%= link_to 'Inicio', root_path %>
 		</li>
-		<li class='navigation__list__item uppercase'>
+		<li class='navigation__list__item u-uppercase'>
 			<%= link_to 'Mi Perfil', edit_user_registration_path %>
 		</li>
-		<li class='navigation__list__item uppercase'>
+		<li class='navigation__list__item u-uppercase'>
 			<%= link_to 'Grupos', root_path %>
 		</li>
-		<li class='navigation__list__item new-post uppercase'>
-			<%= link_to 'Nuevo mensaje', new_post_path, method: :get %>
-		</li>
-
 	</ul>
+	<li class='navigation__list__item new-post u-uppercase'>
+		<%= link_to 'Nuevo mensaje', new_post_path, method: :get %>
+	</li>
 </nav>

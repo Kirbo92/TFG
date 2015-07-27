@@ -1,15 +1,17 @@
 <% model_name = @post.class.model_name.human %>
-<h2><%= t('.title', model: model_name) %></h2>
 
-<%= form_for @post, html: { class: 'pure-form pure-form-aligned' }, builder: CustomFormBuilder do |post| %>
+<%= form_for @post, builder: CustomFormBuilder do |post| %>
 
-	<%= post.form_error %>
+	<div class='bg--gray u-wrapper'>
+		<section class='post'>
+			<h2><%= t('.title', model: model_name) %></h2>
+			<%= post.form_error %>
 
-	<%= post.text_area :content %>
-	<%= post.field_error :content %>
-	</br>
-	</br>
+			<%= post.text_area :content, autofocus: true, class: 'form-control' %>
+			<%= post.field_error :content %>
+			<%= post.submit 'Enviar', class: 'btn btn-primary' %>
+		</section>
+		
+	</div>
 	
-
-	<%= post.submit class: 'pure-button pure-button-primary' %>
 <% end %>

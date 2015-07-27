@@ -1,20 +1,6 @@
-<h2>Perfil de <%= @user.name %> </h2>
+<div class='u-wrapper'>
 
-<% @user.posts.each do |post|%>
-	
-	<div class="post bg-gris">
-		<div class="post__user left">
-			<% image_tag("http://farm3.static.flickr.com/2278/2239310885_7ee80a8a98_t.jpg") %>
-			<span> <%= post.user.name %> </span><br/>
-			<span> <%= link_to '@' + post.user.username, "users/#{post.user.id}" %></span>
-		</div>
-
-		<div class="post__content">
-			<p><%= post.content %></p>
-		</div>
-	</div>
-	
-<%end%>
+<h2> Perfil de <%= @user.name %> </h2> 
 
 <% if @user.id != current_user.id %>
 	<% if @follower.user_id %>
@@ -27,3 +13,22 @@
 		<%end%>
 	<% end %>
 <% end %>
+
+
+<% @user.posts.each do |post|%>
+	
+	<div class='posts bg--gray'>
+		<div class='posts__user posts__user--<%= post.user.level%> u-left'>
+			<%= image_tag('avatar.jpg', class: 'posts__user__avatar')%>
+			<span> <%= post.user.name %> </span><br/>
+			<span> <%= link_to '@' + post.user.username, "users/#{post.user.id}" %></span>
+		</div>
+
+		<div class='posts__content'>
+			<p><%= post.content %></p>
+		</div>
+	</div>
+	
+<%end%>
+
+</div>

@@ -1,26 +1,38 @@
-<h2><%= t('.title') %></h2>
+<div class='bg--gray u-wrapper'>
+  <section class='user__login'>
+  
+    <h2 class='u-textCenter'><%= t('.title') %></h2>
 
-<%= form_for(resource, as: resource_name, html: { class: 'pure-form pure-form-aligned' }, url: session_path(resource_name)) do |f| %>
-  <div class="pure-control-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="pure-control-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? %>
-    <div class="pure-control">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <%= form_for(resource, as: resource_name,
+    url: session_path(resource_name)) do |f| %>
+    
+    <div class='form-group'>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, 
+      placeholder: 'alguien@red.ujaen.es', size: 30, class: 'form-control input-lg' %>
     </div>
-  <% end %>
 
-  <div class="pure-control">
-    <%= f.submit t('.log_in'), class: 'pure-button pure-button-primary' %>
-  </div>
-<% end %>
+    <div class='form-group'>
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "off", 
+      placeholder: 'Contraseña',  size: 30, class: 'form-control input-lg' %>
+    </div>
 
-<%= render "devise/shared/links" %>
+
+    <div class='checkbox'>
+      <%= f.submit t('.log_in'), class: 'btn btn-primary' %>
+
+      <% if devise_mapping.rememberable? %>
+      <%= f.label :remember_me do %>
+      <%= f.check_box :remember_me %> Recordarme
+      <%end%>
+      <% end %>
+    </div>
+
+
+    <% end %>
+
+    <%= render "devise/shared/links" %>
+  </section>
+
+</div>

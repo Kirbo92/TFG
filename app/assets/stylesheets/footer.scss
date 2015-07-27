@@ -1,8 +1,11 @@
-footer{
+.footer{
+	border-radius: 0 0 8px 8px;
 	color: #787878;
-	margin: 2em 1em 0em;
-	padding: 0.1em 1em;
-
+	margin: 0 auto;
+	margin-top: 1em;
+	max-width: 1000px;
+	padding: .5em 1em;
+	text-align: center;
 	p{
 		font-size: 14px;
 	}
