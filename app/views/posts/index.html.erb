@@ -8,3 +8,24 @@
 	</section>
 	
 <%end%>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Nuevo Mensaje</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_tag "/posts",method: 'post', class: "new_post", id: "new_post" do %>
+          
+    	<textarea class="form-control" name="post[content]" id="post_content"></textarea>
+        <br/>	
+        			
+      	<input type="submit" name="commit" value="Enviar" class="btn btn-primary">
+        
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
