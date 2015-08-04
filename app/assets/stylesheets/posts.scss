@@ -1,29 +1,33 @@
-.posts{
+.flash{
+	margin: 0em auto;
+	background: yellow;
+	max-width: 1000px;
+}
+
+.post{
 	border-radius: 10px;
-	margin: .5em 0;
+	margin: .2em 0;
 	overflow: hidden;
 	position: relative;
 }
-	.posts__user{
-		border-right: 1px solid #049FE1;
-		margin: .5em 0;
+	.post__user{
+		margin: .5em;
 		text-align: center;
-		width: 6.5em;
+		width: 6em;
 	}
 
-		.posts__user__avatar{
+		.post__user__avatar{
 			border-radius: 50%;
-			border: 1px solid #049FE1;
 			width: 60px;
 		}
-			.posts__user__avatar--0{
-				border: 1px solid red;
+			.post__user--0{
+				background: #E4F2FF;			
 			}
-			.posts__useravatar--1{
-				border: 1px solid yellow;
+			.post__user--2{
+				background: #EEE;
 			}
 
-	.posts__content{
+	.post__content{
 		margin: 0em 0em 0em 6.5em;
 		padding: .5em 1em 2em;
 
@@ -36,18 +40,3 @@
 			}
 		}
 	}
-
-.post{
-	padding: 1em;
-
-	textarea{
-		margin: 1em auto;
-		padding: 10px;
-		resize: none;
-	}
-}
-@media screen and (min-width: 768px){
-	.post{
-		max-width: 500px;
-	}
-}

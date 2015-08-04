@@ -2,7 +2,7 @@
 
 <%= form_for @post, builder: CustomFormBuilder do |post| %>
 
-	<div class='bg--gray u-wrapper'>
+	<div class='bg--gray container'>
 		<section class='post'>
 			<h2><%= t('.title', model: model_name) %></h2>
 			<%= post.form_error %>

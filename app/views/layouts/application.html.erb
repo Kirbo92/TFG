@@ -8,19 +8,20 @@
 	<%= csrf_meta_tags %>
 </head>
 <body>
+	
 
-	<%= render '/home/header' %>
-	<%= render '/home/navigation' %>
+	<%= render 'layouts/header' %>
 
-	<div class="flash">
+<!-- 	<div class="flash">
 		<% flash.each do |key, value|%>
-			<div id="flash-<%= key %>"><%= value%></div>
+		<div id="flash-<%= key %>"><%= value%></div>
 		<%end%>	
-	</div>
+	</div> -->
 
 	<%= yield %>
 
-	<%= render '/home/footer' %>
+	<%= render 'layouts/footer' %>
+	
 
 </body>
 </html>

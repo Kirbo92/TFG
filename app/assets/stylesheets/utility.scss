@@ -16,32 +16,8 @@
 	text-transform: uppercase;
 }
 
-.u-wrapper,
-.u-wrapper_A,
-.u-wrapper_B {
-	margin: 0 auto;
-	max-width: 1000px;
-	padding: 0 14px;
-}
-
-@media screen and (max-width: 768px){
-	.u-wrapper_A {
-		max-width: 768px;
-	}
-}
-
-@media screen and (max-width: 340px){
-	.u-wrapper_B {
-		max-width: 340px;
-	}
-}
-
 .bg--gray{
 	background: #F1F1F1;
-}
-
-.bg--white{
-	background: #ACB8C1;
 }
 
 

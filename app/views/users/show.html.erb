@@ -1,31 +1,38 @@
-<div class='u-wrapper'>
+<div class='container'>
 
 <h2> Perfil de <%= @user.name %> </h2> 
 
 <% if @user.id != current_user.id %>
+
 	<% if @follower.user_id %>
-		<%= button_to 'Dejar de seguir', follower_path(@follower), class: 'pure-button pure-button-primary', method: :delete %>
+		<%= button_to 'Dejar de seguir', follower_path(@follower), class: 'btn btn-primary', method: :delete %>
 	<% else %>
-		<%= form_for @follower do |f| %>
-			<%= f.hidden_field :user_id , value: current_user.id %>
-			<%= f.hidden_field :user_followed_id , value: @user.id %>
-			<%= f.submit 'Seguir', class: 'pure-button pure-button-primary' %>
-		<%end%>
+		<%= button_to 'Seguir', followers_path(	:user_id => current_user.id, 
+											:user_followed_id => @user.id),
+											class: 'btn btn-primary',
+											:method => :post %>
 	<% end %>
 <% end %>
 
 
+
 <% @user.posts.each do |post|%>
 	
-	<div class='posts bg--gray'>
-		<div class='posts__user posts__user--<%= post.user.level%> u-left'>
-			<%= image_tag('avatar.jpg', class: 'posts__user__avatar')%>
+	<div class="post post__user--<%= @user.level%>" >
+		<div class='post__user u-left'>
+			<%= image_tag('avatar.jpg', class: "post__user__avatar")%>
 			<span> <%= post.user.name %> </span><br/>
-			<span> <%= link_to '@' + post.user.username, "users/#{post.user.id}" %></span>
+			<span> <%= link_to '@' + post.user.username, "/users/#{post.user.id}" %></span>
 		</div>
 
-		<div class='posts__content'>
+		<div class='post__content'>
 			<p><%= post.content %></p>
+			<div class='post__content__actions'>
+				<% if post.user.username == current_user.username %>
+				<%=link_to t('.edit_link'), edit_post_path(post)%>
+				<%=link_to t('.delete_link'), post_path(post), method: :delete %>
+				<% end %>
+			</div>
 		</div>
 	</div>
 	

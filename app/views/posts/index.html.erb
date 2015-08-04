@@ -1,4 +1,10 @@
 <% if user_signed_in? %>
-	<!-- Listamos los posts -->
-	<%= render @posts %>
+	
+	<section class='section'>
+		<div class='container'>
+			<!-- Listamos los posts -->
+			<%= render partial: 'post', collection: @posts %>
+		</div>
+	</section>
+	
 <%end%>
