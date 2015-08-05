@@ -4,11 +4,20 @@
 	max-width: 1000px;
 }
 
+.new-post{
+	padding: 1em 0;
+}
+
+.panel{
+	box-shadow: 0 8px 18px;
+}
+
 .post{
 	border-radius: 10px;
-	margin: .2em 0;
+	margin: .5em 0;
 	overflow: hidden;
 	position: relative;
+	box-shadow: 0 8px 18px;
 }
 	.post__user{
 		margin: .5em;

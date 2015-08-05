@@ -1,60 +1,89 @@
-<div class='container'>
+<section>
+  <div class='container-fluid'>
+    <div class='col-md-4 col-lg-4'>
 
-<section class="panel panel-info">
-    <div class="panel-heading">
-      <h1 class="panel-title u-uppercase"><%= t('.title', resource: resource.class.model_name.human) %></h1>
+      <div class='panel panel-default'>
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= t('.title', resource: resource.class.model_name.human) %></h3>
+        </div>
+        <div class="panel-body">
+          <%= form_for(resource, as: resource_name, 
+            url: registration_path(resource_name), 
+            html: { method: :put }) do |f| %>
+
+            <%= devise_error_messages! %>
+
+            <div class='form-group'>
+              <%= f.label :name %>
+              <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+            </div>
+
+            <div class='form-group'>
+              <%= f.label :email %>
+              <%= f.email_field :email, class: 'form-control' %>
+            </div>
+
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+
+            <div class='form-group'>
+              <%= f.label :password %>
+              <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+            </div>
+
+            <div class='form-group'>
+              <%= f.label :password_confirmation %>
+              <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+            </div>
+
+            <div class='form-group'>
+              <%= f.label :current_password %>
+              <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+            </div>
+            
+            <div class="text-center">
+              <%= f.submit class: 'btn btn-lg btn-info' %>
+            </div>
+
+            <% end %>
+        </div>
+      </div>
+
+      <div class='panel panel-danger'>
+        <div class='panel-heading'>
+          <h3 class='panel-title'>
+            <%= t('.cancel') %>
+          </h3>
+        </div>
+        <div class="panel-body">
+          <p class='text-center'>¿Desea cancelar su cuenta?</p>
+          <div class="text-center">
+            <%= button_to t('.bt_cancel') , registration_path(resource_name), data: { confirm: t('.alert') }, method: :delete, class: 'btn btn-lg btn-danger' %>
+          </div>
+            
+        </div>
+      </div>
     </div>
-    <div class="panel-body">
-      <%= form_for(resource, as: resource_name, 
-        url: registration_path(resource_name), 
-        html: { method: :put }) do |f| %>
 
-        <%= devise_error_messages! %>
+    <% resource.posts.each do |post|%>
+        <div class="post post__user--<%= @user.level%>" >
+          <div class='post__user u-left'>
+            <%= image_tag('avatar.jpg', class: "post__user__avatar")%>
+            <span> <%= post.user.name %> </span><br/>
+            <span> <%= link_to '@' + post.user.username, "/users/#{post.user.id}" %></span>
+          </div>
 
-        <div class='form-group'>
-          <%= f.label :name %>
-          <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+          <div class='post__content'>
+            <p><%= post.content %></p>
+            <div class='post__content__actions'>
+              <% if post.user.username == current_user.username %>
+              <%=link_to t('.edit_link'), edit_post_path(post)%>
+              <%=link_to t('.delete_link'), post_path(post), method: :delete %>
+              <% end %>
+            </div>
+          </div>
         </div>
-
-        <div class='form-group'>
-          <%= f.label :email %>
-          <%= f.email_field :email, class: 'form-control' %>
-        </div>
-
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-        <% end %>
-
-        <div class='form-group'>
-          <%= f.label :password %>
-          <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-        </div>
-
-        <div class='form-group'>
-          <%= f.label :password_confirmation %>
-          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-        </div>
-
-        <div class='form-group'>
-          <%= f.label :current_password %>
-          <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
-        </div>
-
-        <%= f.submit class: 'btn btn-primary' %>
-
-        <% end %>
-      </div>
-    </section>
-
-    <section class="panel panel-danger">
-      <div class="panel-heading">
-        <h1 class="panel-title u-uppercase">
-          <%= t('.cancel') %>
-        </h1>
-      </div>
-      <div class="panel-body">
-        <p>¿Desea cancelar su cuenta? <%= button_to t('.bt_cancel') , registration_path(resource_name), data: { confirm: t('.alert') }, method: :delete, class: 'btn btn-danger' %></p>
-      </div>
-    </section>
+      <%end%>
   </div>
-
+</section>

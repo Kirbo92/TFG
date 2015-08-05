@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('icomoon.eot?rvwgxh');
-	src:url('icomoon.eot?#iefixrvwgxh') format('embedded-opentype'),
-		url('icomoon.ttf?rvwgxh') format('truetype'),
-		url('icomoon.woff?rvwgxh') format('woff'),
-		url('icomoon.svg?rvwgxh#icomoon') format('svg');
+	src:url('icomoon.eot?iwovdv');
+	src:url('icomoon.eot?#iefixiwovdv') format('embedded-opentype'),
+		url('icomoon.ttf?iwovdv') format('truetype'),
+		url('icomoon.woff?iwovdv') format('woff'),
+		url('icomoon.svg?iwovdv#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,27 +23,18 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-new-message{
-	color: white;
-}
 .icon-new-message:before {
-	content: "\e601  ";
-}
-.icon-home:before {
-	content: "\e602  ";
-}
-.icon-user:before {
-	content: "\e603  ";
-}
-.icon-users:before {
-	content: "\e604  ";
-}
-.icon-user-tie:before {
-	content: "\e605  ";
-}
-.icon-menu:before {
 	content: "\e600  ";
 }
-.icon-user2:before {
-	content: "\e606  ";
+.icon-home:before {
+	content: "\e601  ";
+}
+.icon-user:before {
+	content: "\e602  ";
+}
+.icon-menu:before {
+	content: "\e603  ";
+}
+.icon-exit:before {
+	content: "\e604  ";
 }

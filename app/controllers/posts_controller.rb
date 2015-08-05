@@ -13,6 +13,11 @@ class PostsController < ApplicationController
 									FROM posts as p
 									WHERE p.user_id = '#{current_user.id}'
 									ORDER BY created_at DESC")
+	
+		# posts_followers = Post.joins("RIGHT JOIN followers ON posts.user_id = followers.user_followed_id
+		# 								where followers.user_id = #{current_user.id}")	
+		# posts_user = Post.where(user_id: current_user.id)
+		# @posts = posts_followers + posts_user
 	end
 
 	def show

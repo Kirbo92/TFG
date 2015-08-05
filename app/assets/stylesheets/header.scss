@@ -1,3 +1,18 @@
+.navbar-nav{
+	margin: 0;
+	float: left;
+}
 
+.btn-navbar{
+	color: white !important;
+	padding: .5em !important;
+	margin: .5em 1em !important;
+	&:hover{
+		background: #2e6da4 !important;
+	}
+}
 
+.btn-primary:hover{
+	background: #2e6da4 !important;
+}
 

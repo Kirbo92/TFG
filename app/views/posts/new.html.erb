@@ -1,17 +1,17 @@
-<% model_name = @post.class.model_name.human %>
+<section class='new-post'>
+	<div class='container'>
+		<% model_name = @post.class.model_name.human %>
 
-<%= form_for @post, builder: CustomFormBuilder do |post| %>
+		<%= form_for @post, builder: CustomFormBuilder do |post| %>
 
-	<div class='bg--gray container'>
-		<section class='post'>
-			<h2><%= t('.title', model: model_name) %></h2>
-			<%= post.form_error %>
+		<h2><%= t('.title', model: model_name) %></h2>
+		<%= post.form_error %>
 
-			<%= post.text_area :content, autofocus: true, class: 'form-control' %>
-			<%= post.field_error :content %>
-			<%= post.submit 'Enviar', class: 'btn btn-primary' %>
-		</section>
-		
+		<%= post.text_area :content, autofocus: true, class: 'form-control' %>
+		<%= post.field_error :content %> <br/>
+		<%= post.submit 'Enviar', class: 'btn btn-primary' %>
+
+		<% end %>
 	</div>
 	
-<% end %>
+</section>
