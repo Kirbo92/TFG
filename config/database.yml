@@ -47,8 +47,11 @@ test:
 #   production:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
+
 production:
-  <<: *default
-  database: microblogging_production
-  username: microblogging
-  password: <%= ENV['MICROBLOGGING_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: di3397q9snij
+  username: ywcunhzfnfvbze
+  password: 1AWvhUF5FTVxxmCci-nBBG_TJn
