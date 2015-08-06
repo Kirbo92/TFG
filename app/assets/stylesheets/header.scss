@@ -1,10 +1,10 @@
-.navbar-nav{
-	margin: 0;
-	float: left;
+.btn{
+	border-radius: 4px;
+	box-shadow: 0px 1px 4px 0 black;
 }
 
 .btn-navbar{
-	color: white !important;
+	color: #FFF !important;
 	padding: .5em !important;
 	margin: .5em 1em !important;
 	&:hover{
@@ -12,7 +12,17 @@
 	}
 }
 
-.btn-primary:hover{
-	background: #2e6da4 !important;
+.btn-primary{
+	&:hover{
+		background: #2e6da4 !important;
+	}
+	&:focus{
+		background: #2e6da4 !important;
+	}
+}
+
+.navbar-nav{
+	margin: 0;
+	float: left;
 }
 

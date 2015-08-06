@@ -66,7 +66,17 @@
       </div>
     </div>
 
-    <% resource.posts.each do |post|%>
+    <div class='col-md-8 col-lg-8'>
+      <div class='panel panel-default'>
+        <div class="panel-heading">
+          <h3 class="panel-title">Perfil publico</h3>
+        </div>
+          <img  id="avatarPreview" alt="">
+          <%= image_tag ('avatar.jpg'), class: 'img-rounded' %>
+      </div>    
+    </div>
+
+<!--     <% resource.posts.each do |post|%>
         <div class="post post__user--<%= @user.level%>" >
           <div class='post__user u-left'>
             <%= image_tag('avatar.jpg', class: "post__user__avatar")%>
@@ -84,6 +94,6 @@
             </div>
           </div>
         </div>
-      <%end%>
+      <%end%> -->
   </div>
 </section>
