@@ -34,7 +34,7 @@ class PostsController < ApplicationController
 		@post.user = current_user
 		
 		if @post.save
-			return redirect_to root_path, notice: t('.created', model: @post.class.model_name.human)
+			return redirect_to root_path, :flash => { :success => t('.created', model: @post.class.model_name.human)}
 		end
 
 		render :new
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 
 		if @post.update secure_params
-			return redirect_to root_path, notice: t('.edited', model: @post.class.model_name.human)
+			return redirect_to root_path, :flash => { :success => t('.edited', model: @post.class.model_name.human) }
 		end
 
 		render 'edit'

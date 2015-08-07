@@ -3,8 +3,6 @@
 es:
   devise:
     confirmations:
-      new:
-        resend_confirmation_instructions: 'Hola'
       confirmed: "Su cuenta ha sido confirmada."
       send_instructions: "Recibira un correo electrónico en unos minutos con instrucciones sobre cómo restablecer su contraseña."
       send_paranoid_instructions: "Si su correo electrónico existe en nuestra base de datos recibirás un correo electrónico en unos minutos con instrucciones sobre cómo reiniciar su contraseña."

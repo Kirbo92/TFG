@@ -7,9 +7,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  validates :username, uniqueness: true, presence: true
+  validates :username, presence: true, uniqueness: true
   validates :name, presence: true, length: { maximum: 20 }
-  validates :email, uniqueness: { case_sensitive: false }, presence: true, length: { maximum: 80 }
+  validates :email, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 80 }
   validates :password, presence: true, length: { minimum: 8 }
 
 
