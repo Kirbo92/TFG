@@ -1,15 +1,7 @@
 <h2> Perfil de <%= @user.name %> </h2> 
 
 <% if @user.id != current_user.id %>
-
-	<% if @follower.user_id %>
-		<%= button_to 'Dejar de seguir', follower_path(@follower), class: 'btn btn-primary', method: :delete %>
-	<% else %>
-		<%= button_to 'Seguir', followers_path(	:user_id => current_user.id, 
-											:user_followed_id => @user.id),
-											class: 'btn btn-primary',
-											:method => :post %>
-	<% end %>
+	
 <% end %>
 
 

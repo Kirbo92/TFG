@@ -11,14 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806160330) do
-
-  create_table "followers", force: :cascade do |t|
-    t.integer  "user_id",          limit: 4
-    t.integer  "user_followed_id", limit: 4
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-  end
+ActiveRecord::Schema.define(version: 20150807115449) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "content",    limit: 140, null: false
@@ -26,6 +19,17 @@ ActiveRecord::Schema.define(version: 20150806160330) do
     t.datetime "updated_at",             null: false
     t.integer  "user_id",    limit: 4
   end
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "follower_id", limit: 4
+    t.integer  "followed_id", limit: 4
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id", using: :btree
+  add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
+  add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 80,  default: "", null: false
@@ -43,7 +47,6 @@ ActiveRecord::Schema.define(version: 20150806160330) do
     t.string   "username",               limit: 20,               null: false
     t.string   "name",                   limit: 20,               null: false
     t.integer  "level",                  limit: 4,   default: 2,  null: false
-    t.string   "avatar",                 limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

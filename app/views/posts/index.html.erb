@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
 	
-	<section class=''>
+	<section>
 		<div class='container'>
 			<!-- Listamos los posts -->
 			<%= render partial: 'post', collection: @posts %>
@@ -8,3 +8,4 @@
 	</section>
 	
 <%end%>
+
