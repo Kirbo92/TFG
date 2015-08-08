@@ -7,7 +7,7 @@
 			<%= link_to 'Sistema microblogging', root_path, class: 'navbar-brand' %>			
 		</div>
 		
-		<% if user_signed_in? %>
+		
 		<nav id="navbar" class="navbar-collapse collapse">
 			<ul class='nav navbar-nav'>
 				<li>
@@ -15,7 +15,7 @@
 				</li>
 			</ul>
 			<ul class="nav navbar-nav pull-right">
-				
+				<% if user_signed_in? %>
 				<li>
 					<%= link_to 'Mi cuenta', edit_user_registration_path, class: 'icon-user'%>
 				</li>
@@ -28,9 +28,13 @@
 					<span class='icon-new-message'>Nuevo Mensaje</span>
 					<%end%>
 				</li>
+				<% else %>
+					<li><%= link_to "Iniciar sesión", new_user_session_path %></li>
+					<li><%= link_to "Registrarse", new_user_registration_path %></li>
+				<% end %>
 			</ul>
 		</nav>
-		<%end%>
+		
 </header>
 
 <!-- Modal -->

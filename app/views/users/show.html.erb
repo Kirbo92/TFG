@@ -1,10 +1,6 @@
 <h2> Perfil de <%= @user.name %> </h2> 
 
-<% if @user.id != current_user.id %>
-	
-<% end %>
-
-
+<%= render 'follow_form' %>
 
 <% @user.posts.each do |post|%>
 	

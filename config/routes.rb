@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   devise_for :users , :path => '', :path_names => { :sign_in => 'login', :sign_up => 'signup', :edit => 'profile' }
 
   resources :posts
-  resources :followers
   resources :users
+  resources :relationships, only: [:create, :destroy]
 end
