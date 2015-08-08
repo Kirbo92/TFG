@@ -69,31 +69,38 @@
     <div class='col-md-8 col-lg-8'>
       <div class='panel panel-default'>
         <div class="panel-heading">
-          <h3 class="panel-title">Perfil publico</h3>
+          <%= image_tag ('avatar.jpg'), class: 'img-circle ' %>
+          <div class="profile-fields">
+            <p class='profile-name'><%= current_user.name %> </p>
+            <p class='profile-user'><%= '@' + current_user.username %> </p> 
+          </div>
+          <%= render 'users/stats'%>
         </div>
-          <img  id="avatarPreview" alt="">
-          <%= image_tag ('avatar.jpg'), class: 'img-rounded' %>
+        <div class="panel-body">
+          <% resource.posts.each do |post|%>
+              <div class="post post__user--<%= @user.level%>" >
+                <div class='post__user u-left'>
+                  <%= image_tag('avatar.jpg', class: "post__user__avatar")%>
+                  <span> <%= post.user.name %> </span><br/>
+                  <span> <%= link_to '@' + post.user.username, "/users/#{post.user.id}" %></span>
+                </div>
+
+                <div class='post__content'>
+                  <p><%= post.content %></p>
+                  <div class='post__content__actions'>
+                    <% if post.user.username == current_user.username %>
+                    <%=link_to t('.edit_link'), edit_post_path(post)%>
+                    <%=link_to t('.delete_link'), post_path(post), method: :delete %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <%end%>
+        </div>
       </div>    
     </div>
 
-<!--     <% resource.posts.each do |post|%>
-        <div class="post post__user--<%= @user.level%>" >
-          <div class='post__user u-left'>
-            <%= image_tag('avatar.jpg', class: "post__user__avatar")%>
-            <span> <%= post.user.name %> </span><br/>
-            <span> <%= link_to '@' + post.user.username, "/users/#{post.user.id}" %></span>
-          </div>
+  
 
-          <div class='post__content'>
-            <p><%= post.content %></p>
-            <div class='post__content__actions'>
-              <% if post.user.username == current_user.username %>
-              <%=link_to t('.edit_link'), edit_post_path(post)%>
-              <%=link_to t('.delete_link'), post_path(post), method: :delete %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      <%end%> -->
   </div>
 </section>

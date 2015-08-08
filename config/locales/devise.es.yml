@@ -43,6 +43,8 @@ es:
       new:
         title: 'Registro'
       edit:
+        edit_link: 'Editar'
+        delete_link: 'Eliminar'
         title: 'Editar %{resource}'
         constraint_password: '(En blanco si no quieres cambiarla)'
         cancel: 'Cancelar cuenta'

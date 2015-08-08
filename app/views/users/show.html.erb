@@ -1,19 +1,37 @@
-<h2> Perfil de <%= @user.name %> </h2> 
+<section>
+	<div class="container-fluid">
+		<div class='col-md-4 col-lg-3'>
+			<div class='panel panel-default'>
+				<%= image_tag ('avatar.jpg'), class: 'profile-avatar img-circle'%>
+				
+				<div class="profile-fields">
+					<p class='profile-name'><%= @user.name %> </p>
+					<p class='profile-user'><%= '@' + @user.username %> </p> 
+				</div>
+				
+				<%= render 'follow_form' %>
 
-<%= render 'follow_form' %>
-
-<% @user.posts.each do |post|%>
-	
-	<div class="post post__user--<%= @user.level%>" >
-		<div class='post__user u-left'>
-			<%= image_tag('avatar.jpg', class: "post__user__avatar")%>
-			<span> <%= post.user.name %> </span><br/>
-			<span> <%= link_to '@' + post.user.username, "/users/#{post.user.id}" %></span>
+				<%= render 'stats' %>
+			</div>
 		</div>
 
-		<div class='post__content'>
-			<p><%= post.content %></p>
+		<div class='col-md-8 col-lg-9'>
+		
+		<% @user.posts.each do |post|%>
+			
+			<div class="post post__user--<%= @user.level%>" >
+				<div class='post__user u-left'>
+					<%= image_tag('avatar.jpg', class: "post__user__avatar")%>
+					<span> <%= post.user.name %> </span><br/>
+					<span> <%= link_to '@' + post.user.username, "/users/#{post.user.id}" %></span>
+				</div>
+
+				<div class='post__content'>
+					<p><%= post.content %></p>
+				</div>
+			</div>
+		<%end%>
 		</div>
 	</div>
-	
-<%end%>
+</section>
+

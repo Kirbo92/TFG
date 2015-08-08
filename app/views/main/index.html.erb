@@ -1,0 +1,50 @@
+<% if user_signed_in? %>
+
+<section>
+	<div class='container-fluid'>
+		<div class='col-md-4 col-lg-3'>
+			<div class='panel panel-default '>
+				<%= image_tag ('avatar.jpg'), class: "profile-avatar img-circle "%>
+				<div class="profile-fields">
+					<p class='profile-name'><%= current_user.name %> </p>
+					<p class='profile-user'><%= '@' + current_user.username %> </p> 
+				</div>
+				<%= render 'users/stats'  %>
+			</div>
+			<div class='panel panel-default'>
+				<div class="panel-heading">
+					<h3 class="panel-title">Grupos</h3>
+				</div>
+				<div class="panel-body">
+					<ul class="list-group">
+					      <li class="list-group-item">
+					        <span class="badge">14</span>
+					        Algebra
+					      </li>
+					      <li class="list-group-item">
+					        <span class="badge">2</span>
+					        Web semántica y social
+					      </li>
+					      <li class="list-group-item">
+					        <span class="badge">1</span>
+					        Estructuras de datos
+					      </li>
+					    </ul>
+				</div>
+			</div>
+		</div>
+
+		<div class='col-md-8 col-lg-9'>
+			<% if @posts.any? %>
+			<!-- Listamos los posts -->
+			<%= render partial: 'posts/post', collection: @posts %>
+			<%else%>
+			<%= render 'empty'%>
+			<%end%>
+		</div>
+
+	</div>
+</section>
+
+<%end%>
+
