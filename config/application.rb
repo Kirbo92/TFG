@@ -25,6 +25,6 @@ module Microblogging
 
     config.autoload_paths += %W(#{config.root}/lib)
     
-    config.assets.precompile << /\.(?:svg|eot|woff|ttf)\z/
+    config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   end
 end
