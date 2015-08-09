@@ -1,37 +1,36 @@
-<section>
-	<div class="container-fluid">
-		<div class='col-md-4 col-lg-3'>
-			<div class='panel panel-default'>
-				<%= image_tag ('avatar.jpg'), class: 'profile-avatar img-circle'%>
-				
-				<div class="profile-fields">
-					<p class='profile-name'><%= @user.name %> </p>
-					<p class='profile-user'><%= '@' + @user.username %> </p> 
-				</div>
-				
-				<%= render 'follow_form' %>
 
-				<%= render 'stats' %>
+<div class="container-fluid">
+	<aside class='col-md-4 col-lg-3'>
+		<section class='panel panel-default'>
+			<%= image_tag ('avatar.jpg'), class: 'profile-avatar img-circle'%>
+
+			<div class="profile-fields">
+				<p class='profile-name'><%= @user.name %> </p>
+				<%= link_to '@' + @user.username, @user %>
 			</div>
-		</div>
 
-		<div class='col-md-8 col-lg-9'>
+			<%= render 'follow_form' %>
+
+			<%= render 'stats' %>
+		</section>
+	</aside>
+
+	<section class='col-md-8 col-lg-9'>
 		
 		<% @user.posts.each do |post|%>
-			
-			<div class="post post__user--<%= @user.level%>" >
-				<div class='post__user u-left'>
-					<%= image_tag('avatar.jpg', class: "post__user__avatar")%>
-					<span> <%= post.user.name %> </span><br/>
-					<span> <%= link_to '@' + post.user.username, "/users/#{post.user.id}" %></span>
-				</div>
 
-				<div class='post__content'>
-					<p><%= post.content %></p>
-				</div>
+		<div class="post post__user--<%= @user.level%>" >
+			<div class='post__user u-left'>
+				<%= image_tag('avatar.jpg', class: "post__user__avatar")%>
+				<span> <%= post.user.name %> </span><br/>
+				<span> <%= link_to '@' + post.user.username, "/users/#{post.user.id}" %></span>
 			</div>
-		<%end%>
+
+			<div class='post__content'>
+				<p><%= post.content %></p>
+			</div>
 		</div>
-	</div>
-</section>
+		<%end%>
+	</section>
+</div>
 

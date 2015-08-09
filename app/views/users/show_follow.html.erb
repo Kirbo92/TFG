@@ -1,0 +1,35 @@
+<div class='container-fluid'>
+	<aside class='col-md-4 col-lg-3'>
+		<section class='panel panel-default'>
+			<%= image_tag ('avatar.jpg'), class: "profile-avatar img-circle "%>
+			<div class="profile-fields">
+				<p class='profile-name'><%= current_user.name %> </p>
+				<%= link_to '@' + current_user.username, current_user %>
+			</div>
+			<%= render 'stats' %>
+		</section>
+	</aside>
+
+	<section class='col-md-8 col-lg-8'>
+		<div class='panel panel-default'>
+			<div class="panel-heading text-center">
+				Followers
+			</div>
+			<div class="panel-body">
+				<% if @users.any? %>
+				<% @users.each do |user| %>
+				
+				<%= image_tag ('avatar.jpg'), class: 'profile-avatar img-circle'%>
+				<div class="profile-fields">
+					<p class='profile-name'><%= user.name %> </p>
+					<%= link_to '@' + user.username, user %>
+				</div>
+				
+				
+				<% end %>
+				<%end%>
+			</div>
+			
+			<div>
+			</section>
+		</div>

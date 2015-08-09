@@ -1,52 +1,65 @@
-<section>
-  <div class='container-fluid'>
-    <div class='col-md-4 col-lg-4'>
 
-      <div class='panel panel-default'>
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= t('.title', resource: resource.class.model_name.human) %></h3>
+<div class='container-fluid'>
+  <aside class='col-md-4 col-lg-4'>
+
+    <div class='panel panel-default'>
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= t('.title', resource: resource.class.model_name.human) %></h3>
+      </div>
+      <div class="panel-body">
+
+        <legend>
+          <%= link_to 'Ver perfil público', current_user%>
+        </legend>
+        
+        <div class='text-center'>
+          <%= image_tag ('avatar.jpg'), class: 'profile-avatar img-circle'%>
         </div>
-        <div class="panel-body">
-          <%= form_for(resource, as: resource_name, 
-            url: registration_path(resource_name), 
-            html: { method: :put }) do |f| %>
 
-            <%= devise_error_messages! %>
+        <br/>
+        <%= file_field_tag 'avatar'%>
+        <br/>
 
-            <div class='form-group'>
-              <%= f.label :name %>
-              <%= f.text_field :name, autofocus: true, class: 'form-control' %>
-            </div>
+        <%= form_for(resource, as: resource_name, 
+          url: registration_path(resource_name), 
+          html: { method: :put }) do |f| %>
 
-            <div class='form-group'>
-              <%= f.label :email %>
-              <%= f.email_field :email, class: 'form-control' %>
-            </div>
+          <%= devise_error_messages! %>
 
-            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-            <% end %>
+          <div class='form-group'>
+            <%= f.label :name %>
+            <%= f.text_field :name, autofocus: true, class: 'form-control' %>
+          </div>
 
-            <div class='form-group'>
-              <%= f.label :password %>
-              <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
-            </div>
+          <div class='form-group'>
+            <%= f.label :email %>
+            <%= f.email_field :email, class: 'form-control' %>
+          </div>
 
-            <div class='form-group'>
-              <%= f.label :password_confirmation %>
-              <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
-            </div>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
 
-            <div class='form-group'>
-              <%= f.label :current_password %>
-              <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
-            </div>
-            
-            <div class="text-center">
-              <%= f.submit class: 'btn btn-lg btn-info' %>
-            </div>
+          <div class='form-group'>
+            <%= f.label :password %>
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+          </div>
 
-            <% end %>
+          <div class='form-group'>
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+          </div>
+
+          <div class='form-group'>
+            <%= f.label :current_password %>
+            <%= f.password_field :current_password, autocomplete: "off", class: 'form-control' %>
+          </div>
+
+          <div class="text-center">
+            <%= f.submit class: 'btn btn-lg btn-info' %>
+          </div>
+
+          <% end %>
         </div>
       </div>
 
@@ -61,46 +74,43 @@
           <div class="text-center">
             <%= button_to t('.bt_cancel') , registration_path(resource_name), data: { confirm: t('.alert') }, method: :delete, class: 'btn btn-lg btn-danger' %>
           </div>
-            
+
         </div>
       </div>
-    </div>
+    </aside>
 
-    <div class='col-md-8 col-lg-8'>
+    <section class='col-md-8 col-lg-8'>
       <div class='panel panel-default'>
         <div class="panel-heading">
-          <%= image_tag ('avatar.jpg'), class: 'img-circle ' %>
-          <div class="profile-fields">
-            <p class='profile-name'><%= current_user.name %> </p>
-            <p class='profile-user'><%= '@' + current_user.username %> </p> 
-          </div>
-          <%= render 'users/stats'%>
+          <h3 class='panel-title text-center'>
+            Mensajes
+          </h3>
+          
         </div>
         <div class="panel-body">
           <% resource.posts.each do |post|%>
-              <div class="post post__user--<%= @user.level%>" >
-                <div class='post__user u-left'>
-                  <%= image_tag('avatar.jpg', class: "post__user__avatar")%>
-                  <span> <%= post.user.name %> </span><br/>
-                  <span> <%= link_to '@' + post.user.username, "/users/#{post.user.id}" %></span>
-                </div>
+          <div class="post post__user--<%= @user.level%>" >
+            <div class='post__user u-left'>
+              <%= image_tag('avatar.jpg', class: "post__user__avatar")%>
+              <span> <%= post.user.name %> </span><br/>
+              <span> <%= link_to '@' + post.user.username, "/users/#{post.user.id}" %></span>
+            </div>
 
-                <div class='post__content'>
-                  <p><%= post.content %></p>
-                  <div class='post__content__actions'>
-                    <% if post.user.username == current_user.username %>
-                    <%=link_to t('.edit_link'), edit_post_path(post)%>
-                    <%=link_to t('.delete_link'), post_path(post), method: :delete %>
-                    <% end %>
-                  </div>
-                </div>
+            <div class='post__content'>
+              <p><%= post.content %></p>
+              <div class='post__content__actions'>
+                <% if post.user.username == current_user.username %>
+                <%=link_to t('.edit_link'), edit_post_path(post)%>
+                <%=link_to t('.delete_link'), post_path(post), method: :delete %>
+                <% end %>
               </div>
-            <%end%>
+            </div>
+          </div>
+          <%end%>
         </div>
       </div>    
-    </div>
+    </section>
 
-  
+
 
   </div>
-</section>

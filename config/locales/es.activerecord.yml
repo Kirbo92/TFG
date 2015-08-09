@@ -9,6 +9,7 @@ es:
       user:
         username: 'Usuario'
         name: 'Nombre'
+        surname: 'Apellidos'
         email: 'Correo electronico'
         password: 'Contraseña'
         password_confirmation: 'Confirmar contraseña'

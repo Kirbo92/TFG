@@ -12,34 +12,40 @@
 	text-align: left;
 }
 
-.profile{
-	background: white;
+#follow_form{
+	margin: .5em 1em;
 }
 
-.stats-profile{
-	margin: 0 1em;
+.stats{
+	margin: 1em  0;
 }
 
 .stat{
+	border-left: 1px solid #EEE;
 	display: inline-block;
-	margin: .5em;
+	padding: 0 10px;
+
+	strong{
+		display: block;
+	}
 }
 
 .profile-avatar{
 	margin: .5em;
+	text-align: center;
 }
 
 .profile-fields{
+	margin: 0;
+	padding: 0;
 	display: inline-block;
 }
 
 .profile-name{
-	font-size: 24px;
+	color: #094F99;
+	font-size: 21px;
 	margin: 0;
-}
-
-.profile-user{
-	margin: 0;
+	padding: 0;
 }
 
 

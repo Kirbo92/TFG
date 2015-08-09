@@ -1,6 +1,6 @@
 <%= div_for(post, class: "post__user--#{post.user.level} ") do %>
 	<div class="post__user u-left">
-		<%= image_tag('avatar.jpg', class: "post__user__avatar posts__user--#{post.user.level} ") %> <br/>
+		<%= image_tag('avatar.jpg', class: "post__user__avatar ") %> <br/>
 		<span> <%= post.user.name %> </span><br/>
 		<span> <%= link_to '@' + post.user.username, "users/#{post.user.id}" %></span>
 	</div>

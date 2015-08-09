@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates :username, presence: true, uniqueness: true
-  validates :name, presence: true, length: { maximum: 20 }
+  validates :name, presence: true, length: { maximum: 80 }
   validates :email, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 80 }
   validates :password, presence: true, length: { minimum: 8 }
 
