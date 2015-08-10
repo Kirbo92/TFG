@@ -1,45 +1,27 @@
-.flash{
-	margin: 0em auto;
-	background: yellow;
-	max-width: 1000px;
-}
-
-.new-post{
-	padding: 1em 0;
-}
-
-.panel{
-
-}
-
-.form-control{
-	border-radius: 0px;
-}
-
-.post{
+.media{
 	border-radius: 8px;
-	margin-bottom: .5em;
-	border: 1px solid #EEE;
-	overflow: hidden;
-	position: relative;
-	box-shadow: 2px 2px 10px;
+	box-shadow: 3px 3px 4px #D0D0D0;
 }
-	.post__user{
+	.media-ago{
+		float: right;
+		margin: 0 1em;
+	}
+	.media-object
+	{
 		margin: .5em;
-		text-align: center;
-		width: 6em;
+		width: 60px;
 	}
 
-		.post__user__avatar{
-			border-radius: 50%;
-			width: 60px;
-		}
-			.post__user--0{
-				background: #E4F2FF;			
-			}
-			.post__user--2{
-				background: #EEE;
-			}
+	.media-heading{
+		margin: .5em 0;
+	}
+
+	.post__user--0{
+		background: #E4F2FF;			
+	}
+	.post__user--2{
+		background: #EEE;
+	}
 			
 
 	.post__content{

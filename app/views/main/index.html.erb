@@ -10,7 +10,7 @@
 			</div>
 			<%= render 'users/stats'  %>
 		</section>
-		<section class='panel panel-default'>
+		<section class='panel panel-default hidden-xs'>
 			<div class="panel-heading">
 				<h3 class="panel-title">Grupos</h3>
 			</div>
@@ -38,7 +38,7 @@
 			<!-- Listamos los posts -->
 			<%= render partial: 'posts/post', collection: @posts %>
 		<%else%>
-			<%= render 'empty'%>
+			<%= render 'posts/empty'%>
 		<%end%>
 	</section>
 

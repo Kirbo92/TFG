@@ -19,15 +19,22 @@
 		
 		<% @user.posts.each do |post|%>
 
-		<div class="post post__user--<%= @user.level%>" >
-			<div class='post__user u-left'>
-				<%= image_tag('avatar.jpg', class: "post__user__avatar")%>
-				<span> <%= post.user.name %> </span><br/>
-				<span> <%= link_to '@' + post.user.username, "/users/#{post.user.id}" %></span>
+		<div class="media post__user--<%= @user.level%>" >
+			<div class='media-left'>
+				<%= image_tag('avatar.jpg', class: "media-object img-circle")%>
 			</div>
 
-			<div class='post__content'>
+			<div class='media-body'>
+				<h4 class='media-heading'>
+					<%= post.user.name %>
+					<span><%= link_to ' @' + post.user.username, "users/#{post.user.id}" %></span>
+				</h4>
 				<p><%= post.content %></p>
+				<div class='post__content__actions'>
+				<% if post.user.username == current_user.username %>
+					<%=link_to t('.delete_link'), post_path(post), method: :delete %>
+				<% end %>
+				</div>
 			</div>
 		</div>
 		<%end%>

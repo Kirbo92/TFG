@@ -81,31 +81,18 @@
 
     <section class='col-md-8 col-lg-8'>
       <div class='panel panel-default'>
-        <div class="panel-heading">
+        <div class='panel-heading'>
           <h3 class='panel-title text-center'>
-            Mensajes
+            <%= 'Mensajes de ' + current_user.username %>
           </h3>
           
         </div>
-        <div class="panel-body">
-          <% resource.posts.each do |post|%>
-          <div class="post post__user--<%= @user.level%>" >
-            <div class='post__user u-left'>
-              <%= image_tag('avatar.jpg', class: "post__user__avatar")%>
-              <span> <%= post.user.name %> </span><br/>
-              <span> <%= link_to '@' + post.user.username, "/users/#{post.user.id}" %></span>
-            </div>
-
-            <div class='post__content'>
-              <p><%= post.content %></p>
-              <div class='post__content__actions'>
-                <% if post.user.username == current_user.username %>
-                <%=link_to t('.edit_link'), edit_post_path(post)%>
-                <%=link_to t('.delete_link'), post_path(post), method: :delete %>
-                <% end %>
-              </div>
-            </div>
-          </div>
+        <div class='panel-body'>
+          <% if current_user.posts.any? %>
+            <!-- Listamos los posts -->
+            <%= render partial: 'posts/post', collection: current_user.posts %>
+          <%else%>
+            <%= render 'posts/empty'%>
           <%end%>
         </div>
       </div>    
