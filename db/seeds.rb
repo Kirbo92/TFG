@@ -10,13 +10,19 @@
 				name: 'Admin', password: '12345678', level: 0)
 	User.create(username: 'mafc0004', email: 'mafc0004@red.ujaen.es', 
 				name: 'Miguel Ángel', password: '12345678')
-	User.create(username: 'dep00001', email: 'dep00001@red.ujaen.es', 
-				name: 'Daniel', password: '12345678')
-	User.create(username: 'prueba', email: 'prueba@prueba.com', 
+	User.create(username: 'prueba', email: 'prueba@red.ujaen.es', 
 				name: 'Prueba', password: '12345678')
 
+	Relationship.create(follower_id: 2, followed_id: 1)
+	Relationship.create(follower_id: 2, followed_id: 3)
+
+	Post.create(content: 'Todo listo para el despliege en heroku', user_id: 2)
+	Post.create(content: 'Las pruebas funcionan bien', user_id: 3)
+	Post.create(content: 'Los mensajes de profesores y administración será de este color, mientras que el de los alumnos será de color gris', user_id: 1)
+	Post.create(content: 'Este es mi trabajo final de grado', user_id: 2)
 	Post.create(content: 'Primer mensaje del sistema microblogging', user_id: 1)
-	Post.create(content: 'Esto es mi trabajo final de grado', user_id: 2)
+
+
 
 
 	

@@ -1,6 +1,7 @@
 .media{
 	border-radius: 8px;
 	box-shadow: 3px 3px 4px #D0D0D0;
+	margin-top: .5em;
 }
 	.media-ago{
 		float: right;
@@ -24,16 +25,4 @@
 	}
 			
 
-	.post__content{
-		margin: 0em 0em 0em 6.5em;
-		padding: .5em 1em 2em;
-
-		.post__content__actions{
-			position: absolute;
-			bottom: 0;
-			margin: .5em 0;
-			a{
-				margin: 0 1em 0 0;
-			}
-		}
-	}
+	
