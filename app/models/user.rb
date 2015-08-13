@@ -30,8 +30,9 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
 
   def feed
-    following_ids = "SELECT followed_id FROM relationships
-                     WHERE  follower_id = :user_id"
+    following_ids = 'SELECT followed_id FROM relationships
+                     WHERE  follower_id = :user_id'
+
                      
     Post.where("user_id IN (#{following_ids}) OR user_id = :user_id",
                     following_ids: following_ids, user_id: id)
@@ -50,7 +51,21 @@ class User < ActiveRecord::Base
   # Returns true if the current user is following the other user.
   def following?(other_user)
     following.include?(other_user)
-  end                                 
+  end
+
+  # Subscribe a group
+  def subscribe(group)
+    memberships.create(group_id: group.id)
+  end
+
+  # Unsubscribe a group
+  def unsubscribe(group)
+    memberships.find_by(group_id: group.id).destroy
+  end
+
+  def member?(group)
+    groups.include?(group)
+  end                   
 
 
 end

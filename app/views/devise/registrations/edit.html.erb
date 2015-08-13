@@ -8,23 +8,25 @@
       </div>
       <div class="panel-body">
 
-        <legend>
-          <%= link_to 'Ver perfil público', current_user%>
-        </legend>
-        
-        <div class='text-center'>
-          <%= image_tag ('avatar.jpg'), class: 'profile-avatar img-circle'%>
-        </div>
-
-        <br/>
-        <%= file_field_tag 'avatar'%>
-        <br/>
-
         <%= form_for(resource, as: resource_name, 
           url: registration_path(resource_name), 
           html: { method: :put }) do |f| %>
 
           <%= devise_error_messages! %>
+
+
+          <legend>
+            <%= link_to 'Ver perfil público', current_user%>
+          </legend>
+
+          <div class='form-group text-center'>
+            <%= image_tag ('avatar.jpg'), class: 'profile-avatar img-circle'%>
+            <%= file_field_tag 'avatar'%>
+          </div>
+
+          <br/>
+
+
 
           <div class='form-group'>
             <%= f.label :name %>
@@ -89,10 +91,10 @@
         </div>
         <div class='panel-body'>
           <% if current_user.posts.any? %>
-            <!-- Listamos los posts -->
-            <%= render partial: 'posts/post', collection: current_user.posts %>
+          <!-- Listamos los posts -->
+          <%= render partial: 'posts/post', collection: current_user.posts %>
           <%else%>
-            <%= render 'posts/empty'%>
+          <%= render 'posts/empty'%>
           <%end%>
         </div>
       </div>    

@@ -1,0 +1,24 @@
+<aside class='col-md-4 col-lg-3'>
+	<section class='panel panel-default '>
+		<%= image_tag ('avatar.jpg'), class: 'profile-avatar img-circle '%>
+		<div class="profile-fields">
+			<p class='profile-name'><%= current_user.name %> </p>
+			<%= link_to '@' + current_user.username, current_user %>
+		</div>
+		<%= render 'users/stats'  %>
+	</section>
+
+	<section class='panel panel-default hidden-xs'>
+		<div class="panel-heading">
+			<strong>Groups</strong>
+			<%= '(' + current_user.groups.count.to_s + ')' %>
+		</div>
+		<div class="panel-body">
+			<% current_user.groups.each do |group| %>
+				<div>
+					<%= link_to group.tag, group_path(group) %>
+				</div>
+			<%end%>
+		</div>
+	</section>
+</aside>

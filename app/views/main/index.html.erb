@@ -1,5 +1,3 @@
-<% if user_signed_in? %>
-
 <div class='container-fluid'>
 	<aside class='col-md-4 col-lg-3'>
 		<section class='panel panel-default '>
@@ -12,23 +10,15 @@
 		</section>
 		<section class='panel panel-default hidden-xs'>
 			<div class="panel-heading">
-				<h3 class="panel-title">Grupos</h3>
+				<strong>Mis grupos</strong>
+				<%= '(' + current_user.groups.count.to_s + ')' %>
 			</div>
 			<div class="panel-body">
-				<ul class="list-group">
-					<li class="list-group-item">
-						<span class="badge">14</span>
-						Algebra
-					</li>
-					<li class="list-group-item">
-						<span class="badge">2</span>
-						Web semántica y social
-					</li>
-					<li class="list-group-item">
-						<span class="badge">1</span>
-						Estructuras de datos
-					</li>
-				</ul>
+				<% current_user.groups.each do |group| %>
+					<div>
+						<%= link_to group.tag, group_path(group) %>
+					</div>
+				<%end%>
 			</div>
 		</section>
 	</aside>
@@ -43,6 +33,4 @@
 	</section>
 
 </div>
-
-<%end%>
 

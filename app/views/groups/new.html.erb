@@ -1,0 +1,30 @@
+
+<div class='container-fluid'>
+
+	<%= render 'main/aside' %>
+
+	<section class='col-md-8 col-lg-9'>
+		<%= form_for @group do |group| %>
+
+		<h2>Grupos</h2>
+
+		<div class="form-group">
+			<%= group.label :name %>
+			<%= group.text_field :name, class: 'form-control'%>
+		</div>
+
+		<div class="form-group">
+			<%= group.label :tag %>
+			<%= group.text_field :tag , class: 'form-control'%>
+		</div>
+
+		<div class="form-group">
+			<%= group.label :description %>
+			<%= group.text_area :description, class: 'form-control' %>
+		</div>
+		
+		<%= group.submit 'Enviar', class: 'btn btn-primary' %>
+
+		<% end %>
+	</section>
+</div>

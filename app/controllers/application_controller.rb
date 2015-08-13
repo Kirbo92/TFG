@@ -7,21 +7,21 @@ class ApplicationController < ActionController::Base
 
   protected
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:username, :name, :email, :password, :password_confirmation, :remember_me) }
-    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :username, :email, :password, :remember_me) }
-    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:username, :name, :email, :password, :password_confirmation, :current_password) }
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:avatar, :username, :name, :email, :password, :password_confirmation, :remember_me) }
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:avatar, :login, :username, :email, :password, :remember_me) }
+    devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:avatar, :username, :name, :email, :password, :password_confirmation, :current_password ) }
   end
 
 
-  before_action :set_locale
+  # before_action :set_locale
    
-  def set_locale
-    if cookies[:educator_locale] && I18n.available_locales.include?(cookies[:educator_locale].to_sym)
-      l = cookies[:educator_locale].to_sym
-    else
-      l = I18n.default_locale
-      cookies.permanent[:educator_locale] = l
-    end
-    I18n.locale = l
-  end
+  # def set_locale
+  #   if cookies[:educator_locale] && I18n.available_locales.include?(cookies[:educator_locale].to_sym)
+  #     l = cookies[:educator_locale].to_sym
+  #   else
+  #     l = I18n.default_locale
+  #     cookies.permanent[:educator_locale] = l
+  #   end
+  #   I18n.locale = l
+  # end
 end
