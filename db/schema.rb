@@ -83,22 +83,22 @@ ActiveRecord::Schema.define(version: 20150813140849) do
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 80,  default: "",            null: false
-    t.string   "encrypted_password",     limit: 255, default: "",            null: false
+    t.string   "email",                  limit: 80,  default: "", null: false
+    t.string   "encrypted_password",     limit: 255, default: "", null: false
     t.string   "reset_password_token",   limit: 255
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          limit: 4,   default: 0,             null: false
+    t.integer  "sign_in_count",          limit: 4,   default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip",     limit: 255
     t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                                 null: false
-    t.datetime "updated_at",                                                 null: false
-    t.string   "username",               limit: 20,                          null: false
-    t.string   "name",                   limit: 80,                          null: false
-    t.integer  "level",                  limit: 4,   default: 2,             null: false
-    t.string   "avatar",                 limit: 255, default: "default.jpg"
+    t.datetime "created_at",                                      null: false
+    t.datetime "updated_at",                                      null: false
+    t.string   "username",               limit: 20,               null: false
+    t.string   "name",                   limit: 80,               null: false
+    t.integer  "level",                  limit: 4,   default: 2,  null: false
+    t.string   "avatar",                 limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
