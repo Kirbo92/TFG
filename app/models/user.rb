@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
 
@@ -12,7 +13,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 80 }
   validates :password, presence: true, length: { minimum: 8 }
 
-
+  mount_uploader :avatar, AvatarUploader
 
   has_many :posts, dependent: :destroy
 

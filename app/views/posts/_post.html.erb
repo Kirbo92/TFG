@@ -1,6 +1,6 @@
 <%= div_for(post, class: "media post__user--#{post.user.level} ") do %>
 	<div class='media-left'>
-		<%= image_tag('avatar.jpg', class: 'media-object img-circle') %> 
+		<%= image_tag post.user.avatar, class: 'media-object img-circle' %> 
 	</div>
 
 	<div class='media-body'>

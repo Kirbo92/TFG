@@ -20,13 +20,11 @@
           </legend>
 
           <div class='form-group text-center'>
-            <%= image_tag ('avatar.jpg'), class: 'profile-avatar img-circle'%>
-            <%= file_field_tag 'avatar'%>
+            <%= image_tag current_user.avatar.url , class: 'edit-avatar img-circle'%>
+            <%= f.file_field :avatar %>
           </div>
 
           <br/>
-
-
 
           <div class='form-group'>
             <%= f.label :name %>

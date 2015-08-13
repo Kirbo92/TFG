@@ -6,12 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 	User.create(username: 'admin', email: 'admin@red.ujaen.es', 
-				name: 'Admin', password: '12345678', level: 0)
+				name: 'Admin', password: '12345678', level: 0, avatar: 'default.jpg')
 	User.create(username: 'mafc0004', email: 'mafc0004@red.ujaen.es', 
-				name: 'Miguel Ángel', password: '12345678')
+				name: 'Miguel Ángel', password: '12345678', avatar: 'default.jpg')
 	User.create(username: 'prueba', email: 'prueba@red.ujaen.es', 
-				name: 'Prueba', password: '12345678')
+				name: 'Prueba', password: '12345678', avatar: 'default.jpg')
 
 	Relationship.create(follower_id: 2, followed_id: 1)
 	Relationship.create(follower_id: 2, followed_id: 3)
