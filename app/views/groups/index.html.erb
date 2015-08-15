@@ -4,13 +4,10 @@
 
 	<section class='col-md-8 col-lg-9'>
 		<div class="panel panel-default">
-			<div class="panel-heading">
-				<span class="pull-right">
-					<% link_to 'Nuevo grupo', new_group_path, class: 'btn btn-info'%>
-				</span>
+			<div class="panel-heading text-center">
 				<strong>Grupos</strong>
 				<%= '(' + @groups.count.to_s + ')' %>
-				<div class="pull-right">
+				<div class="pull-left">
 					<%= link_to 'Nuevo grupo', new_group_path, class: ''%>
 				</div>
 			</div>
@@ -21,7 +18,7 @@
 				<ul class='media-list'>
 					<li class='media'>
 						<div class='media-left'>
-							<%= image_tag('avatar.jpg', class: 'media-object img-circle') %> 
+							<%= image_tag group.logo, class: 'media-object img-circle' %> 
 						</div>
 						<div class="media-body">
 							<h4 class="media-heading">
@@ -29,6 +26,8 @@
 								<div class="pull-right">
 									<%= render 'subscription_form', group: group %>
 								</div>
+								<p><%= group.description %></p>
+								
 							</h4>
 						</div>
 					</li>

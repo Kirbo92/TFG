@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813140849) do
+ActiveRecord::Schema.define(version: 20150815161151) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150813140849) do
     t.text     "description", limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "logo",        limit: 255
   end
 
   create_table "memberships", force: :cascade do |t|
@@ -82,6 +83,16 @@ ActiveRecord::Schema.define(version: 20150813140849) do
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true, using: :btree
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id", using: :btree
 
+  create_table "tags", force: :cascade do |t|
+    t.integer  "post_id",    limit: 4
+    t.integer  "group_id",   limit: 4
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "tags", ["group_id"], name: "index_tags_on_group_id", using: :btree
+  add_index "tags", ["post_id"], name: "index_tags_on_post_id", using: :btree
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 80,  default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -107,4 +118,6 @@ ActiveRecord::Schema.define(version: 20150813140849) do
 
   add_foreign_key "memberships", "groups"
   add_foreign_key "memberships", "users"
+  add_foreign_key "tags", "groups"
+  add_foreign_key "tags", "posts"
 end

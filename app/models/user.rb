@@ -34,9 +34,16 @@ class User < ActiveRecord::Base
     following_ids = 'SELECT followed_id FROM relationships
                      WHERE  follower_id = :user_id'
 
-                     
-    Post.where("user_id IN (#{following_ids}) OR user_id = :user_id",
-                    following_ids: following_ids, user_id: id)
+    groups = 'SELECT group_id FROM memberships
+             WHERE user_id = :user_id'
+
+    group_ids = "SELECT post_id FROM tags
+                      WHERE group_id IN (#{groups})"
+    
+
+    Post.where("user_id IN (#{following_ids}) OR user_id = :user_id OR id IN (#{group_ids})",
+                    following_ids: following_ids, user_id: id, group_ids: group_ids)
+
   end
 
   # Follows a user.

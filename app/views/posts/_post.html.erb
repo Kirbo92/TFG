@@ -8,6 +8,7 @@
 			<%= post.user.name %>
 			<span><%= link_to ' @' + post.user.username, "users/#{post.user.id}" %></span>
 		</h4>
+	
 		<p><%= post.content %></p>
 		<div class='post__content__actions'>
 		<% if post.user.username == current_user.username %>

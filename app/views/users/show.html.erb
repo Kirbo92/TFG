@@ -2,7 +2,7 @@
 <div class="container-fluid">
 	<aside class='col-md-4 col-lg-3'>
 		<section class='panel panel-default'>
-			<%= image_tag ('avatar.jpg'), class: 'profile-avatar img-circle'%>
+			<%= image_tag @user.avatar, class: 'profile-avatar img-circle'%>
 
 			<div class="profile-fields">
 				<p class='profile-name'><%= @user.name %> </p>
@@ -21,13 +21,13 @@
 
 		<div class="media post__user--<%= @user.level%>" >
 			<div class='media-left'>
-				<%= image_tag('avatar.jpg', class: "media-object img-circle")%>
+				<%= image_tag post.user.avatar , class: "media-object img-circle"%>
 			</div>
 
 			<div class='media-body'>
 				<h4 class='media-heading'>
 					<%= post.user.name %>
-					<span><%= link_to ' @' + post.user.username, "users/#{post.user.id}" %></span>
+					<span><%= link_to ' @' + post.user.username, "/users/#{post.user.id}" %></span>
 				</h4>
 				<p><%= post.content %></p>
 				<div class='post__content__actions'>

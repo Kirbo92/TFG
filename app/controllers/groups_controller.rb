@@ -19,12 +19,12 @@ class GroupsController < ApplicationController
 	end
 
 	def show
-		group = Group.find params[:id]
-		@posts = group.posts
+		@group = Group.find params[:id]
+		@posts = @group.posts
 	end
 
 	private
 	def secure_params
-		params.require(:group).permit :name, :tag, :description
+		params.require(:group).permit :name, :tag, :description, :logo
 	end
 end

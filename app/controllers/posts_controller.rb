@@ -1,7 +1,5 @@
 class PostsController < ApplicationController
 
-	before_action :authenticate_user!
-
 	def show
 		@post = Post.find(params[:id])
 	end
@@ -11,6 +9,7 @@ class PostsController < ApplicationController
 	end
 
 	def create
+
 		@post = Post.new secure_params
 		@post.user = current_user
 		
@@ -45,7 +44,7 @@ class PostsController < ApplicationController
 
 	private
 	def secure_params
-		params.require(:post).permit :content
+		params.require(:post).permit :content, :group_id
 	end
 
 end

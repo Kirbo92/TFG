@@ -8,11 +8,11 @@
 
 
 	User.create(username: 'admin', email: 'admin@red.ujaen.es', 
-				name: 'Admin', password: '12345678', level: 0, avatar: 'default.jpg')
+				name: 'Admin', password: '12345678', level: 0)
 	User.create(username: 'mafc0004', email: 'mafc0004@red.ujaen.es', 
-				name: 'Miguel Ángel', password: '12345678', avatar: 'default.jpg')
+				name: 'Miguel Ángel', password: '12345678')
 	User.create(username: 'prueba', email: 'prueba@red.ujaen.es', 
-				name: 'Prueba', password: '12345678', avatar: 'default.jpg')
+				name: 'Prueba', password: '12345678')
 
 	Relationship.create(follower_id: 2, followed_id: 1)
 	Relationship.create(follower_id: 2, followed_id: 3)
