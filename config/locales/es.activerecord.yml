@@ -1,7 +1,7 @@
 es:
   activerecord:
     models:
-      post: 'mensaje'
+      post: 'Mensaje'
       user: 'Usuario'
     attributes:
       post:

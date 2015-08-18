@@ -1,40 +1,52 @@
 <div class='container-fluid'>
-	
-	<%= render 'main/aside'%>
+	<div class='row'>
+		<%= render 'users/aside'%>
 
-	<section class='col-md-8 col-lg-9'>
-		<div class="panel panel-default">
-			<div class="panel-heading text-center">
-				<strong>Grupos</strong>
-				<%= '(' + @groups.count.to_s + ')' %>
-				<div class="pull-left">
-					<%= link_to 'Nuevo grupo', new_group_path, class: ''%>
+		<section class='col-md-8 col-lg-9'>
+			<div class="panel panel-default">
+				<div class="panel-heading text-center">
+					<strong>Grupos</strong>
+					<%= '(' + @groups.count.to_s + ')' %>
+					<div class="pull-left">
+						<%= link_to 'Nuevo grupo', new_group_path%>
+					</div>
 				</div>
-			</div>
-			<div class="panel-body">
+				<div class="panel-body">
 
-				<% @groups.each do |group|%>
+					<% @groups.each do |group|%>
 
-				<ul class='media-list'>
-					<li class='media'>
-						<div class='media-left'>
-							<%= image_tag group.logo, class: 'media-object img-circle' %> 
-						</div>
-						<div class="media-body">
-							<h4 class="media-heading">
-								<%= link_to group.name, group_path(group) %>
+					<ul class='media-list'>
+						<li class='media'>
+							<div class='media-left'>
+								<%= image_tag group.logo, class: 'media-object img-circle' %> 
+							</div>
+							<div class="media-body">
+								<h4 class="media-heading">
+								<% if current_user.member?(group) %>								
+									<%= link_to group.name, group_path(group) %>
+								<%else%>
+									<%= group.name%>
+								<%end%>
+								</h4>
 								<div class="pull-right">
-									<%= render 'subscription_form', group: group %>
+									<div class="dropdown">
+										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Acciones <span class="caret"></span></a>
+									  <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="dLabel">
+									    <li><%= render 'admin_form', group: group %></li>
+									    <li><%= render 'subscription_form', group: group %></li>
+									  </ul>
+									</div>
+									
 								</div>
 								<p><%= group.description %></p>
-								
-							</h4>
-						</div>
-					</li>
-				</ul>
-				<%end%>
+							</div>
+							<hr>
+						</li>
+					</ul>
+					<%end%>
+				</div>
 			</div>
-		</div>
-		
-	</section>
+			
+		</section>
+	</div>
 </div>

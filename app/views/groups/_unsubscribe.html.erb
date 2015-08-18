@@ -1,4 +1,1 @@
-<%= form_for current_user.memberships.find_by(group_id: group.id),
-             html: { method: :delete } do |f| %>
-  <%= f.submit "Cancerlar subscripcion", class: "btn btn-primary" %>
-<% end %>
+<%= link_to 'Darse de baja', current_user.memberships.find_by(group_id: group.id), method: :delete %>

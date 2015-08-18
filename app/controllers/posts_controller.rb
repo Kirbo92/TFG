@@ -1,5 +1,11 @@
 class PostsController < ApplicationController
 
+	def index
+		@posts = current_user.timeline.order(created_at: :desc)
+		# @posts = current_user.timeline.order(created_at: :DESC).page(params[:page])
+
+	end
+
 	def show
 		@post = Post.find(params[:id])
 	end

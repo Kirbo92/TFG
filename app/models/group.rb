@@ -1,4 +1,11 @@
 class Group < ActiveRecord::Base
+
+  	validates :tag, presence: true, uniqueness: { case_sensitive: false }, length: { maximum: 50 }
+  	validates :name, presence: true, length: { maximum: 100 }
+  	validates :user_admin, presence: true
+
+
+
 	has_many :memberships
 	has_many :users, :through => :memberships
 
@@ -7,12 +14,5 @@ class Group < ActiveRecord::Base
 
   	mount_uploader :logo, LogoUploader
 
-
-	# def posts
-	# 	group_ids = 'SELECT group_id FROM memberships
- 	#                     WHERE  user_id = :user_id'
-
- 	#   	 	Post.where("content LIKE ?", "%#{self.tag}%")
- 	#  	end
   	
 end

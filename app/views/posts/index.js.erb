@@ -1,0 +1,6 @@
+$('#content').append("<%= j render @posts %>");
+<% if @posts.current_page == @posts.total_pages %>
+ $('#view-more').remove();
+<% else %>
+ $('#view-more').html("<%= j link_to('', url_for(page: @posts.current_page + 1)) %>");
+<% end %>

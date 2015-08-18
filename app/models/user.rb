@@ -30,7 +30,7 @@ class User < ActiveRecord::Base
                                    dependent:   :destroy
   has_many :followers, through: :passive_relationships, source: :follower
 
-  def feed
+  def timeline
     following_ids = 'SELECT followed_id FROM relationships
                      WHERE  follower_id = :user_id'
 
