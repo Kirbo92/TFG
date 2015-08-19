@@ -15,13 +15,13 @@ class Post < ActiveRecord::Base
   	hastags = self.content.scan(/#\w+/).flatten
   	
   	unless hastags.blank?
-	  	hastags = hastags.map(&:inspect).join(', ')
-
-	    groups = Group.where("tag in (#{hastags})")
-
+      hastags = hastags.map {|str| "\'#{str}\'"}.join(', ')
+      groups = Group.where("tag in (#{hastags}) ")
+	    
 	  	groups.each do |group|
-	  		Tag.create(post_id: self.id, group_id: group.id)
+        Tag.create(post_id: self.id, group_id: group.id)
 	  	end
   	end
   end
+  
 end
